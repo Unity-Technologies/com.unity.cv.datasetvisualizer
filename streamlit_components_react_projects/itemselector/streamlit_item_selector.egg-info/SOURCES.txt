@@ -1,9 +1,0 @@
-LICENSE
-MANIFEST.in
-setup.py
-itemselector/__init__.py
-streamlit_item_selector.egg-info/PKG-INFO
-streamlit_item_selector.egg-info/SOURCES.txt
-streamlit_item_selector.egg-info/dependency_links.txt
-streamlit_item_selector.egg-info/requires.txt
-streamlit_item_selector.egg-info/top_level.txt

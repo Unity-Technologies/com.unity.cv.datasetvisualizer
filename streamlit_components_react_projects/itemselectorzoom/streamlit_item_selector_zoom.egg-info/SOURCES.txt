@@ -1,9 +1,0 @@
-LICENSE
-MANIFEST.in
-setup.py
-itemselectorzoom/__init__.py
-streamlit_item_selector_zoom.egg-info/PKG-INFO
-streamlit_item_selector_zoom.egg-info/SOURCES.txt
-streamlit_item_selector_zoom.egg-info/dependency_links.txt
-streamlit_item_selector_zoom.egg-info/requires.txt
-streamlit_item_selector_zoom.egg-info/top_level.txt

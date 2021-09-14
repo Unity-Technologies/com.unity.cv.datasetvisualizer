@@ -1,9 +1,0 @@
-LICENSE
-MANIFEST.in
-setup.py
-gridviewsettings/__init__.py
-streamlit_grid_view_settings.egg-info/PKG-INFO
-streamlit_grid_view_settings.egg-info/SOURCES.txt
-streamlit_grid_view_settings.egg-info/dependency_links.txt
-streamlit_grid_view_settings.egg-info/requires.txt
-streamlit_grid_view_settings.egg-info/top_level.txt
