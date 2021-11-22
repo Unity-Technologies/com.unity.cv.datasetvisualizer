@@ -7,6 +7,8 @@ from datasetinsights.datasets.unity_perception.captures import Captures
 
 import visualization.visualizers as v
 import json
+from os import listdir
+from os.path import isfile, join
 
 from google.protobuf.json_format import MessageToDict, Parse, ParseError
 from UnityVisionHub.tools.consumers.solo.parser import Solo
@@ -24,44 +26,25 @@ from UnityVisionHub.tools.consumers.protos.solo_pb2 import (
 class Dataset:
     @staticmethod
     def check_folder_valid(base_dataset_dir: str):
-        found_solo_metadata = False
+        found_solo_meta = False
+        found_solo_annot = False
+        found_solo_metric = False
+        found_solo_sensor = False
         try:
-            meta_dir = os.path.join(base_dataset_dir, "metadata" + "." + "json")
-            if os.path.isfile(meta_dir):
-                found_solo_metadata = True
-
-            return found_solo_metadata
-        except PermissionError:
-            return False
-
-    #     found_dataset = False
-    #     found_rgb = False
-    #     found_logs = False
-    #     try:
-    #         children_dirs = [os.path.basename(f.path.replace("\\", "/")) for f in os.scandir(base_dataset_dir) if
-    #                          f.is_dir()]
-    #         for children_dir in children_dirs:
-    #             if children_dir.startswith("sequence"):
-    #                 for file_name in os.listdir(children_dir):
-    #                     if "frame_data" in file_name:
-    #                         found_dataset = True
-    #         return found_dataset
-    #     except PermissionError:
-    #         return False
-
-    @staticmethod
-    def check_sequence_folder_valid(base_dataset_dir: str):
-        found_dataset = False
-        found_rgb = False
-        try:
-            children_dirs = [os.path.basename(f.path.replace("\\", "/")) for f in os.scandir(base_dataset_dir) if
-                             f.is_dir()]
-            for children_dir in children_dirs:
-                if "camera" in children_dir:
-                    found_rgb = True
-                elif "frame_data" in children_dir:
-                    found_dataset = True
-            return found_dataset and found_rgb
+            meta_file = "metadata.json"
+            annot_file = "annotation_definitions.json"
+            metric_file = "metric_definitions.json"
+            sensor_file = "sensor_definitions.json"
+            files = [f for f in listdir(base_dataset_dir) if isfile(join(base_dataset_dir, f))]
+            if meta_file in files:
+                found_solo_meta = True
+            if annot_file in files:
+                found_solo_annot = True
+            if metric_file in files:
+                found_solo_metric = True
+            if sensor_file in files:
+                found_solo_sensor = True
+            return found_solo_meta and found_solo_annot and found_solo_metric and found_solo_sensor
         except PermissionError:
             return False
 
@@ -70,44 +53,18 @@ class Dataset:
             try:
                 self.data_root = data_root
                 self.get_annotation_definitions()
-                # self.metric_def = MetricDefinitions(data_root)
-                # self.cap = Captures(data_root)
-
                 self.solo = Solo(data_root, start=0)
-
                 self.dataset_valid = True
             except Exception as e:
                 print(e)
-                # self.ann_def = None
-                # self.metric_def = None
-                # self.cap = None
                 self.data_root = None
+                self.solo = None
                 self.dataset_valid = False
         else:
-            # self.ann_def = None
-            # self.metric_def = None
-            # self.cap = None
             self.data_root = None
-            self.dataset_valid = False
+            self.solo = None
 
-    # def get_solo_annotations(self, data_dir: str):
-    #     f = open(data_dir + "/data/go_solo_0/sequence.0/step0.frame_data.json", "r")
-    #     y = json.dumps(json.load(f))
-    # 
-    #     frame = Parse(y, Frame(), ignore_unknown_fields=True)
-    #     bounding_box_2d_annotation = BoundingBox2DAnnotation()
-    #     bounding_box_3d_annotation = BoundingBox3DAnnotation()
-    #     instance_segmentation_annotation = InstanceSegmentationAnnotation()
-    #     camera_sensor_capture = RGBCamera()
-    #     for annotation in camera_sensor_capture.annotations:
-    #         if annotation.Is(bounding_box_3d_annotation.DESCRIPTOR):
-    #             annotation.Unpack(bounding_box_3d_annotation)
-    #         elif annotation.Is(bounding_box_2d_annotation.DESCRIPTOR):
-    #             annotation.Unpack(bounding_box_2d_annotation)
-    #         elif annotation.Is(instance_segmentation_annotation.DESCRIPTOR):
-    #             annotation.Unpack(instance_segmentation_annotation)
-    #         else:
-    #             ParseError("Failed to parse message. Please provide @type")
+            self.dataset_valid = False
 
     def get_annotation_definitions(self):
         f = open(os.path.join(self.data_root, "metadata" + "." + "json"), "r")
@@ -131,34 +88,6 @@ class Dataset:
                     return template;
 
         return None
-
-    #
-    # def get_annotation_id(self, name: str) -> Optional[str]:
-    #     """ gets annotation definition id of the specified annotation
-    #
-    #     :param name: Name of the annotation we want the id of
-    #     :type name: str
-    #     :return: annotation definition id
-    #     :rtype: str
-    #     """
-    #
-    #     for idx, a in enumerate(self.ann_def.table.to_dict('records')):
-    #         if a["name"] == name:
-    #             return a["id"]
-    #     return None
-
-    # def get_annotation_index(self, name: str) -> int:
-    #     """ gets annotation definition index of the specified annotation
-    #
-    #     :param name: Name of the annotation we want the id of
-    #     :type name: str
-    #     :return: index
-    #     :rtype: int
-    #     """
-    #     for idx, a in enumerate(self.ann_def.table.to_dict('records')):
-    #         if a["name"] == name:
-    #             return idx
-    #     return -1
 
     def _to_annotation(self, annotation):
         if annotation == 'type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition':

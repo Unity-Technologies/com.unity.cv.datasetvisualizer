@@ -1,0 +1,2145 @@
+{
+  "version": "0.0.1",
+  "captures": [
+    {
+      "id": "d4f3641d-e269-4645-a730-ad24ea36e569",
+      "sequence_id": "758ba463-87d4-4d09-9b61-9d4b5be3c5bf",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_2.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "5e13895d-7e08-4883-a3c7-60a96e577ddf",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 348.0,
+  "y": 122.0,
+  "width": 171.0,
+  "height": 173.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 75.0,
+  "y": 156.0,
+  "width": 302.0,
+  "height": 274.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 450.0,
+  "y": 173.0,
+  "width": 289.0,
+  "height": 297.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "2bea21fb-a25f-4b19-8dbf-4cac78883046",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_2.png"
+        }
+      ]
+    },
+    {
+      "id": "68250045-5b5f-4adc-8b95-f93350853c36",
+      "sequence_id": "758ba463-87d4-4d09-9b61-9d4b5be3c5bf",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_3.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "4b400ed1-e9ae-4298-a4bb-b1bbffaf0496",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 347.0,
+  "y": 122.0,
+  "width": 175.0,
+  "height": 173.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 77.0,
+  "y": 155.0,
+  "width": 302.0,
+  "height": 277.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 446.0,
+  "y": 173.0,
+  "width": 285.0,
+  "height": 299.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "6bf1c34e-a12e-42ed-9555-95dcb2505ca5",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_3.png"
+        }
+      ]
+    },
+    {
+      "id": "4ec17a93-26c4-4f72-95c5-04f21ab188ee",
+      "sequence_id": "b01e0fc8-a951-4fcf-aa0a-dd9b44fb70a8",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_4.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "d2922613-7a83-45bd-8f7b-fa3b8724aa3b",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 345.0,
+  "y": 122.0,
+  "width": 180.0,
+  "height": 174.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 79.0,
+  "y": 155.0,
+  "width": 301.0,
+  "height": 279.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 444.0,
+  "y": 172.0,
+  "width": 279.0,
+  "height": 303.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "b00c794e-34fc-4a04-b811-466791e03dfa",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_4.png"
+        }
+      ]
+    },
+    {
+      "id": "a5a91325-555a-4515-b33d-42c6492b0d08",
+      "sequence_id": "b01e0fc8-a951-4fcf-aa0a-dd9b44fb70a8",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_5.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "8e9071e0-bfa3-469a-b3f5-2e899a53a7a5",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 345.0,
+  "y": 122.0,
+  "width": 182.0,
+  "height": 174.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 82.0,
+  "y": 154.0,
+  "width": 300.0,
+  "height": 282.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 441.0,
+  "y": 172.0,
+  "width": 274.0,
+  "height": 305.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "3dfc7682-eb11-484a-9b6b-354153ea8122",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_5.png"
+        }
+      ]
+    },
+    {
+      "id": "8ac6d2ca-1042-47ef-b392-5b91d69bcbe0",
+      "sequence_id": "f08dd4c9-9c47-43cf-a7fe-efb30ac286db",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_6.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "65d68e02-df14-4cf8-961a-28de2fadba1d",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 344.0,
+  "y": 122.0,
+  "width": 185.0,
+  "height": 175.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 85.0,
+  "y": 154.0,
+  "width": 298.0,
+  "height": 283.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 439.0,
+  "y": 171.0,
+  "width": 278.0,
+  "height": 307.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "ac103c9f-626d-4816-a39b-0d10f8d4b6ea",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_6.png"
+        }
+      ]
+    },
+    {
+      "id": "e1ec6a2b-8584-40dc-8ffc-23fb45242c89",
+      "sequence_id": "f08dd4c9-9c47-43cf-a7fe-efb30ac286db",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_7.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "9d862b9b-040d-407a-b295-5675927ed465",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 344.0,
+  "y": 121.0,
+  "width": 187.0,
+  "height": 176.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 88.0,
+  "y": 154.0,
+  "width": 295.0,
+  "height": 284.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 438.0,
+  "y": 171.0,
+  "width": 285.0,
+  "height": 309.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "ea8fd811-704a-4b7c-b601-d95c1a527e80",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_7.png"
+        }
+      ]
+    },
+    {
+      "id": "18d5bb2a-4079-463e-8ba5-30c73c2c59c2",
+      "sequence_id": "4cd252a4-9ec5-4c13-a21d-6cc90cbce121",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_8.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "be323dc8-1435-4c28-a79e-345737e8c54a",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 344.0,
+  "y": 121.0,
+  "width": 189.0,
+  "height": 178.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 92.0,
+  "y": 154.0,
+  "width": 292.0,
+  "height": 285.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 436.0,
+  "y": 171.0,
+  "width": 293.0,
+  "height": 310.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "879e63f1-8019-4c76-9187-fde2435fe976",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_8.png"
+        }
+      ]
+    },
+    {
+      "id": "a1ccac12-887e-4578-b1bb-5d7aa2c290a7",
+      "sequence_id": "4cd252a4-9ec5-4c13-a21d-6cc90cbce121",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_9.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "b173d629-8dee-4d12-897a-4b1f8a8b12fd",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 344.0,
+  "y": 121.0,
+  "width": 191.0,
+  "height": 179.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 96.0,
+  "y": 154.0,
+  "width": 288.0,
+  "height": 286.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 435.0,
+  "y": 171.0,
+  "width": 299.0,
+  "height": 311.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "9697ea45-6d92-40b3-a508-bcb2f3ba84f6",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_9.png"
+        }
+      ]
+    },
+    {
+      "id": "93646413-1948-4267-8b4a-304a7dc5080c",
+      "sequence_id": "c10d273c-8848-401a-af26-a19364c2bc20",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_10.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "62408904-3363-4ade-80e2-f6431678ffe8",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 344.0,
+  "y": 121.0,
+  "width": 192.0,
+  "height": 181.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 100.0,
+  "y": 154.0,
+  "width": 284.0,
+  "height": 286.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 435.0,
+  "y": 171.0,
+  "width": 304.0,
+  "height": 311.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "1b6d024e-e134-4d3d-99ad-95d15bcaa58e",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_10.png"
+        }
+      ]
+    },
+    {
+      "id": "eed49e73-63ed-4080-b2a6-bef8cf14a1ef",
+      "sequence_id": "c10d273c-8848-401a-af26-a19364c2bc20",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_11.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "a50d94ba-ace1-4d7c-9d4b-0f7e5a325c74",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 345.0,
+  "y": 121.0,
+  "width": 192.0,
+  "height": 183.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 105.0,
+  "y": 154.0,
+  "width": 279.0,
+  "height": 286.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 435.0,
+  "y": 171.0,
+  "width": 309.0,
+  "height": 311.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "2bcd9c31-4048-4ec7-875a-1be18175e6f0",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_11.png"
+        }
+      ]
+    },
+    {
+      "id": "4203064d-ba38-4d65-a82a-e8d1ceedb2bb",
+      "sequence_id": "b0878086-78a1-4e6a-82eb-45d0f49e53d2",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_12.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "9e8eb1d3-b9bb-494b-9084-f7c2ae04343f",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 346.0,
+  "y": 121.0,
+  "width": 192.0,
+  "height": 183.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 109.0,
+  "y": 154.0,
+  "width": 274.0,
+  "height": 285.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 435.0,
+  "y": 171.0,
+  "width": 314.0,
+  "height": 310.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "8abfebfc-8f21-4ca0-814a-86d659bac557",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_12.png"
+        }
+      ]
+    },
+    {
+      "id": "08686897-219f-4368-a115-7852f878e4ba",
+      "sequence_id": "b0878086-78a1-4e6a-82eb-45d0f49e53d2",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_13.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "14a2bbdf-d7bc-4c37-8ecd-c804dcff55ec",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 347.0,
+  "y": 121.0,
+  "width": 192.0,
+  "height": 182.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 114.0,
+  "y": 154.0,
+  "width": 268.0,
+  "height": 284.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 435.0,
+  "y": 171.0,
+  "width": 318.0,
+  "height": 309.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "5cf6b94c-68cf-47a8-95de-f7d507fb9abf",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_13.png"
+        }
+      ]
+    },
+    {
+      "id": "b2b381fa-b6fa-40be-82a1-907f158a1572",
+      "sequence_id": "19da6000-3f39-4d98-ac29-39759ccb0710",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_14.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "97cef40a-89ed-4ad7-a4cf-d6c50534d535",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 349.0,
+  "y": 122.0,
+  "width": 190.0,
+  "height": 181.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 119.0,
+  "y": 154.0,
+  "width": 261.0,
+  "height": 283.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 436.0,
+  "y": 171.0,
+  "width": 321.0,
+  "height": 307.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "8c9c5809-dca1-4c32-a4f4-a27869795ea7",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_14.png"
+        }
+      ]
+    },
+    {
+      "id": "536bb164-1e99-40fa-8919-ac3fe1a5c95a",
+      "sequence_id": "19da6000-3f39-4d98-ac29-39759ccb0710",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_15.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "7a481e1a-fe56-44e5-bb52-62414851ad9a",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 350.0,
+  "y": 122.0,
+  "width": 189.0,
+  "height": 180.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 125.0,
+  "y": 154.0,
+  "width": 253.0,
+  "height": 282.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 437.0,
+  "y": 172.0,
+  "width": 323.0,
+  "height": 305.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "e43fbba8-9fa6-4148-95e9-aa56ef176a86",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_15.png"
+        }
+      ]
+    },
+    {
+      "id": "5a911e1e-4366-4d4e-bf68-2916fb9078fd",
+      "sequence_id": "a8b96693-7b77-4ac7-a800-6fab86ed6ded",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_16.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "8dd9ec02-ca7b-4e39-a96e-5e5209f5b107",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 352.0,
+  "y": 122.0,
+  "width": 187.0,
+  "height": 179.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 123.0,
+  "y": 155.0,
+  "width": 253.0,
+  "height": 279.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 439.0,
+  "y": 172.0,
+  "width": 325.0,
+  "height": 303.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "5cf6d1fa-ab00-4f2d-ba39-30c657b16567",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_16.png"
+        }
+      ]
+    },
+    {
+      "id": "42f2f984-4447-449f-ae44-eced79fc70a0",
+      "sequence_id": "a8b96693-7b77-4ac7-a800-6fab86ed6ded",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_17.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "ac5fec22-7069-4bfe-b55c-7403e3703d64",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 354.0,
+  "y": 122.0,
+  "width": 185.0,
+  "height": 178.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 115.0,
+  "y": 155.0,
+  "width": 259.0,
+  "height": 277.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 440.0,
+  "y": 173.0,
+  "width": 327.0,
+  "height": 299.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "2ae1965f-56e7-4646-9ba3-02472f9a2f3b",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_17.png"
+        }
+      ]
+    },
+    {
+      "id": "6757fb71-0266-4cfe-8737-b3f0792fba39",
+      "sequence_id": "6ac85302-27fd-4366-ab1f-08f2dd3ca300",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_18.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "6c6bfdfe-7d28-4382-9a17-b18c5271522d",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 356.0,
+  "y": 122.0,
+  "width": 182.0,
+  "height": 177.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 109.0,
+  "y": 156.0,
+  "width": 262.0,
+  "height": 274.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 442.0,
+  "y": 174.0,
+  "width": 327.0,
+  "height": 296.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "147d05dc-10d5-43af-aaa9-ede9e5d933b1",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_18.png"
+        }
+      ]
+    },
+    {
+      "id": "c3be9df9-75f0-4894-8cda-5f1ddf8801d2",
+      "sequence_id": "6ac85302-27fd-4366-ab1f-08f2dd3ca300",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_19.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "66775725-2815-4087-831c-06c84396efe2",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 359.0,
+  "y": 123.0,
+  "width": 178.0,
+  "height": 175.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 102.0,
+  "y": 156.0,
+  "width": 265.0,
+  "height": 271.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 444.0,
+  "y": 174.0,
+  "width": 327.0,
+  "height": 293.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "4be22fa6-f99b-492d-9f23-4d3b903172f6",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_19.png"
+        }
+      ]
+    },
+    {
+      "id": "cd413ca2-fa7b-411d-900f-cb5d6bdc6bcd",
+      "sequence_id": "97fb22b0-e3e3-4f3f-9c18-267d49032a57",
+      "step": 0,
+      "timestamp": 0.0,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_20.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "76aa67f0-fc11-4551-be6b-8c9c48d872c6",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 361.0,
+  "y": 123.0,
+  "width": 175.0,
+  "height": 174.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 97.0,
+  "y": 157.0,
+  "width": 266.0,
+  "height": 267.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 447.0,
+  "y": 175.0,
+  "width": 325.0,
+  "height": 288.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "e95b3a0e-df50-4d9b-b716-6965303921f6",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_20.png"
+        }
+      ]
+    },
+    {
+      "id": "e6ad362b-18a8-4c94-a0ae-199416536978",
+      "sequence_id": "97fb22b0-e3e3-4f3f-9c18-267d49032a57",
+      "step": 1,
+      "timestamp": 0.0166,
+      "sensor": {
+        "sensor_id": "1a2de615-ebd6-4f3f-b962-b4c1cf3e981f",
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "modality": "camera",
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0,
+          1.00000012
+        ],
+        "camera_intrinsic": [
+          [
+            1.12784016,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.73234534,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0006001
+          ]
+        ],
+        "projection": "perspective"
+      },
+      "ego": {
+        "ego_id": "4da92de6-d4fc-423e-a652-b5c4eb9da53a",
+        "translation": [
+          116.528549,
+          91.11087,
+          -194.854446
+        ],
+        "rotation": [
+          -0.228823066,
+          0.124303445,
+          -0.0294684973,
+          -0.965049446
+        ],
+        "velocity": null,
+        "acceleration": null
+      },
+      "filename": "RGB84754329-1574-48a6-9e9f-f021193eec63/rgb_21.png",
+      "format": "PNG",
+      "annotations": [
+        {
+          "id": "23451977-f102-441d-a710-9d828f1c0304",
+          "annotation_definition": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+          "values": [
+            {
+  "label_id": 2,
+  "label_name": "Cube",
+  "instance_id": 3,
+  "x": 364.0,
+  "y": 124.0,
+  "width": 170.0,
+  "height": 172.0
+},
+            {
+  "label_id": 3,
+  "label_name": "Box",
+  "instance_id": 4,
+  "x": 91.0,
+  "y": 158.0,
+  "width": 268.0,
+  "height": 263.0
+},
+            {
+  "label_id": 1,
+  "label_name": "Crate",
+  "instance_id": 1,
+  "x": 449.0,
+  "y": 176.0,
+  "width": 324.0,
+  "height": 284.0
+},
+            {
+  "label_id": 4,
+  "label_name": "Terrain",
+  "instance_id": 2,
+  "x": 0.0,
+  "y": 72.0,
+  "width": 811.0,
+  "height": 456.0
+}
+          ]
+        },
+        {
+          "id": "7133bbc2-f0ea-4746-89ff-da2358af5f0a",
+          "annotation_definition": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+          "filename": "SemanticSegmentationc70cbf65-2526-47a4-b98f-d560702e4862/segmentation_21.png"
+        }
+      ]
+    }
+  ]
+}

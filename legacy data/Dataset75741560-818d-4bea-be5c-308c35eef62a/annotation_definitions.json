@@ -1,0 +1,77 @@
+{
+  "version": "0.0.1",
+  "annotation_definitions": [
+    {
+      "id": "f9f22e05-443f-4602-a422-ebe4ea9b55cb",
+      "name": "bounding box",
+      "description": "Bounding box for each labeled object visible to the sensor",
+      "format": "json",
+      "spec": [
+        {
+          "label_id": 1,
+          "label_name": "Crate"
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube"
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box"
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain"
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character"
+        }
+      ]
+    },
+    {
+      "id": "12f94d8d-5425-4deb-9b21-5e53ad957d66",
+      "name": "semantic segmentation",
+      "description": "pixel-wise semantic segmentation label",
+      "format": "PNG",
+      "spec": [
+        {
+          "label_name": "Box",
+          "pixel_value": {
+            "r": 1.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 1.0
+          }
+        },
+        {
+          "label_name": "Cube",
+          "pixel_value": {
+            "r": 0.0,
+            "g": 0.024693727493286133,
+            "b": 1.0,
+            "a": 1.0
+          }
+        },
+        {
+          "label_name": "Crate",
+          "pixel_value": {
+            "r": 0.0,
+            "g": 1.0,
+            "b": 0.16973757743835449,
+            "a": 1.0
+          }
+        },
+        {
+          "label_name": "Terrain",
+          "pixel_value": {
+            "r": 0.82075470685958862,
+            "g": 0.0,
+            "b": 0.66466760635375977,
+            "a": 1.0
+          }
+        }
+      ]
+    }
+  ]
+}

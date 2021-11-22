@@ -14,7 +14,7 @@ from datasetinsights.datasets.unity_perception import AnnotationDefinitions, Met
 from datasetinsights.datasets.unity_perception.captures import Captures
 
 import helpers.custom_components_setup as cc
-from datasetvisualizer.Dataset import Dataset
+from datasetvisualizer.LegacyDataset import Dataset
 
 import helpers.datamaker_dataset_helper as datamaker
 
@@ -39,11 +39,11 @@ def datamaker_dataset(path: str) -> Optional[Dict[int, Dataset]]:
     """
     instances = {}
     try:
-        for app_param in [f.path for f in os.scandir(path) if f.is_dir()]:            
+        for app_param in [f.path for f in os.scandir(path) if f.is_dir()]:
             read_datamaker_instance_output(app_param, instances)
     except Exception:
-        #The user may be selecting an actual app-param folder instead of a folder containing app-params. This can happen if the user is on the mac and there is only one app-param folder in the downloaded dataset.
-        try:            
+        # The user may be selecting an actual app-param folder instead of a folder containing app-params. This can happen if the user is on the mac and there is only one app-param folder in the downloaded dataset.
+        try:
             read_datamaker_instance_output(path, instances)
         except Exception:
             return None
@@ -56,13 +56,14 @@ def datamaker_dataset(path: str) -> Optional[Dict[int, Dataset]]:
 
 def read_datamaker_instance_output(path, instances):
     for instance in [g.path for g in os.scandir(path) if g.is_dir()]:
-            if re.match(".*instance_[0-9]*", instance):
-                instance_num = int(instance[instance.rfind("instance_") + len("instance_"):])
-                for attempt in [h.path for h in os.scandir(instance) if h.is_dir()]:
-                    if re.match(".*attempt_[0-9]*", attempt):
-                        ds = Dataset(attempt)
-                        if ds.dataset_valid:
-                            instances[instance_num] = ds
+        if re.match(".*instance_[0-9]*", instance):
+            instance_num = int(instance[instance.rfind("instance_") + len("instance_"):])
+            for attempt in [h.path for h in os.scandir(instance) if h.is_dir()]:
+                if re.match(".*attempt_[0-9]*", attempt):
+                    ds = Dataset(attempt)
+                    if ds.dataset_valid:
+                        instances[instance_num] = ds
+
 
 def create_session_state_data(attribute_values: Dict[str, any]):
     """ Takes a dictionary of attributes to values to create the streamlit session_state object. 
@@ -150,131 +151,76 @@ def display_number_frames(num_frames: int):
     st.sidebar.markdown("### Number of frames: " + str(num_frames))
 
 
-def preview_dataset(base_dataset_dir: str):
-    """
-    Adds streamlit components to the app to construct the dataset preview.
+def preview_dataset(data_root, folder_name):
+    instances = datamaker_dataset(data_root)
 
-    :param base_dataset_dir: The directory that contains the perception dataset.
-    :type base_dataset_dir: str
-    """
+    # if it is not a datamaker dataset
+    if instances is None:
+        # Attempt to read as a normal perception dataset
+        ds = Dataset(data_root)
+        if not ds.dataset_valid:
+            st.warning("The provided Dataset folder \"" + data_root + "\" is not considered valid")
 
-    # Create state with default values
-    create_session_state_data({
-        'zoom_image': '-1',
-        'start_at': '0',
-        'num_cols': '3',
-        'curr_dir': base_dataset_dir,
+            st.markdown("# Please open a dataset folder:")
+            if st.button("Open Dataset", key="second open dataset"):
+                folder_select()
+            return
 
-        'just_opened_zoom': True,
-        'just_opened_grid': True,
+        if len(folder_name) >= 1:
+            st.sidebar.markdown("# Current dataset:")
+            st.sidebar.write(folder_name)
 
-        'bbox2d_existed_last_time': False,
-        'bbox3d_existed_last_time': False,
-        'keypoints_existed_last_time': False,
-        'semantic_existed_last_time': False,
+        display_number_frames(ds.length())
 
-        'previous_labelers': {},
-        'labelers_changed': False,
-    })    
+        available_labelers = ds.get_available_labelers()
+        labelers = create_sidebar_labeler_menu(available_labelers)
 
-    # Gets the latest selected directory
-    base_dataset_dir = st.session_state.curr_dir
-
-    # Display select dataset menu
-    st.sidebar.markdown("# Select Dataset")
-    if st.sidebar.button("Open Dataset"):
-        folder_select()
-
-    if base_dataset_dir is None:
-        st.markdown("# Please open a dataset folder:")
-        if st.button("Open Dataset", key="second open dataset"):
-            folder_select()
-        return
-
-    # Display name of dataset (Name of folder)
-    dataset_name = os.path.abspath(base_dataset_dir).replace("\\", "/")
-
-    if dataset_name[-1] == '/':
-        folder_name = dataset_name.split('/')[-2]
-    else:
-        folder_name = dataset_name.split('/')[-1]
-
-    if dataset_name is not None and dataset_name.strip() != "":
-        data_root = os.path.abspath(dataset_name)
-        # Attempt to read data_root as a datamaker dataset
-        instances = datamaker_dataset(data_root)
-        
-        # if it is not a datamaker dataset
-        if instances is None:
-            # Attempt to read as a normal perception dataset
-            ds = Dataset(data_root)
-            if not ds.dataset_valid:                
-                st.warning("The provided Dataset folder \"" + data_root + "\" is not considered valid")
-
-                st.markdown("# Please open a dataset folder:")
-                if st.button("Open Dataset", key="second open dataset"):
-                    folder_select()
-                return
-
-            if len(folder_name) >= 1:
-                st.sidebar.markdown("# Current dataset:")
-                st.sidebar.write(folder_name)
-
-            display_number_frames(ds.length())
-
-            available_labelers = ds.get_available_labelers()
-            labelers = create_sidebar_labeler_menu(available_labelers)
-
-            # zoom_image is negative if the application isn't in zoom mode
-            index = int(st.session_state.zoom_image)
-            if index >= 0:
-                zoom(index, 0, ds, labelers)
-            else:
-                num_rows = 5
-                grid_view(num_rows, ds, labelers)
-
-        # if it is a datamaker dataset
+        # zoom_image is negative if the application isn't in zoom mode
+        index = int(st.session_state.zoom_image)
+        if index >= 0:
+            zoom(index, 0, ds, labelers)
         else:
-            if len(folder_name) >= 1:
-                st.sidebar.markdown("# Current dataset:")
-                st.sidebar.write(folder_name)
+            num_rows = 5
+            grid_view(num_rows, ds, labelers)
 
-            display_number_frames(datamaker.get_dataset_length_with_instances(instances))
-
-            # zoom_image is negative if the application isn't in zoom mode
-            index = int(st.session_state.zoom_image)            
-            if index >= 0:
-                instance_key = datamaker.get_instance_by_capture_idx(instances, index)
-                
-                if (instance_key is None):
-                    index = 0
-                    instance_key = datamaker.get_instance_by_capture_idx(instances, index)
-
-                offset = datamaker.get_dataset_length_with_instances(instances, instance_key)
-                ds = instances[instance_key]
-                ann_def = ds.ann_def                                                      
-                available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
-                labelers = create_sidebar_labeler_menu(available_labelers)
-                zoom(index, offset, ds, labelers)
-            else:
-                index = st.session_state.start_at                
-                num_rows = 5
-                instance_key = datamaker.get_instance_by_capture_idx(instances, index)                           
-                
-                if (instance_key is None):
-                    st.session_state.start_at = 0
-                    index = 0
-                    instance_key = datamaker.get_instance_by_capture_idx(instances, index)
-
-                ds = instances[instance_key]
-                ann_def = ds.ann_def                                
-                available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
-                labelers = create_sidebar_labeler_menu(available_labelers)
-                grid_view_instances(num_rows, instances, labelers)
+    # if it is a datamaker dataset
     else:
-        st.markdown("# Please select a valid dataset folder:")
-        if st.button("Select dataset folder"):
-            folder_select()
+        if len(folder_name) >= 1:
+            st.sidebar.markdown("# Current dataset:")
+            st.sidebar.write(folder_name)
+
+        display_number_frames(datamaker.get_dataset_length_with_instances(instances))
+
+        # zoom_image is negative if the application isn't in zoom mode
+        index = int(st.session_state.zoom_image)
+        if index >= 0:
+            instance_key = datamaker.get_instance_by_capture_idx(instances, index)
+
+            if (instance_key is None):
+                index = 0
+                instance_key = datamaker.get_instance_by_capture_idx(instances, index)
+
+            offset = datamaker.get_dataset_length_with_instances(instances, instance_key)
+            ds = instances[instance_key]
+            ann_def = ds.ann_def
+            available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
+            labelers = create_sidebar_labeler_menu(available_labelers)
+            zoom(index, offset, ds, labelers)
+        else:
+            index = st.session_state.start_at
+            num_rows = 5
+            instance_key = datamaker.get_instance_by_capture_idx(instances, index)
+
+            if (instance_key is None):
+                st.session_state.start_at = 0
+                index = 0
+                instance_key = datamaker.get_instance_by_capture_idx(instances, index)
+
+            ds = instances[instance_key]
+            ann_def = ds.ann_def
+            available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
+            labelers = create_sidebar_labeler_menu(available_labelers)
+            grid_view_instances(num_rows, instances, labelers)
 
 
 def folder_select():
@@ -414,10 +360,11 @@ def grid_view_instances(
     for i in range(start_at, min(start_at + (num_cols * num_rows), dataset_size)):
         instance_key = datamaker.get_instance_by_capture_idx(instances, i)
         ds = instances[instance_key]
-        ann_def = ds.ann_def        
+        ann_def = ds.ann_def
         cap = ds.cap
-        data_root = ds.data_root                
-        image = ds.get_image_with_labelers(i - datamaker.get_dataset_length_with_instances(instances, instance_key), labelers, max_size=(6 - num_cols) * 150)
+        data_root = ds.data_root
+        image = ds.get_image_with_labelers(i - datamaker.get_dataset_length_with_instances(instances, instance_key),
+                                           labelers, max_size=(6 - num_cols) * 150)
         containers[i - start_at].image(image, caption=str(i), use_column_width=True)
 
 
@@ -505,30 +452,3 @@ def zoom(index: int,
                     if metric_def['id'] == metric['metric_definition']:
                         st.markdown("## " + metric_def['name'])
                 st.write(metric)
-
-
-def preview_app(args):
-    """
-    Starts the dataset preview app.
-
-    :param args: Arguments for the app, such as dataset
-    :type args: Namespace
-    """
-    preview_dataset(args["data"])
-
-
-if __name__ == "__main__":
-
-    # This needs to be the first streamlit command
-    st.set_page_config(layout="wide")
-    # removes the default zoom button on images
-    st.markdown('<style>button.css-enefr8{display: none;}'
-                '       button.css-1u96g9d{display: none;}</style>', unsafe_allow_html=True)
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("data", type=str)
-    args = parser.parse_args()
-    if os.path.isdir(args.data):
-        preview_app({"data": args.data})
-    else:
-        preview_app({"data": None})

@@ -97,8 +97,6 @@ def create_sidebar_entry(label, annotator_dic, available_labelers, label_type, l
         states['name'] = l['name']
         states['state'] = True
 
-
-
     if len(states) > 0:
         labelers[label_type] = st.sidebar.checkbox(label) and st.session_state[f'{label_type}_existed_last_time']
         st.session_state[f'{label_type}_existed_last_time'] = True
@@ -156,32 +154,35 @@ def create_sidebar_labeler_menu(available_labelers: List[str], annotator_dic) ->
         if labeler['type'] == "type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition":
             semantic_count = semantic_count + 1
 
-    create_sidebar_entry("2D Bounding Boxes", annotator_dic, available_labelers, 'type.unity.com/unity.solo.BoundingBoxAnnotationDefinition', labelers)
-    create_sidebar_entry("3D Bounding Boxes", annotator_dic, available_labelers, 'type.unity.com/unity.solo.BoundingBox3DAnnotationDefinition', labelers)
-    create_sidebar_entry("Keypoints", annotator_dic, available_labelers, 'type.unity.com/unity.solo.KeypointAnnotationDefinition', labelers)
-    create_sidebar_entry("Instance Segmentation", annotator_dic, available_labelers, 'type.unity.com/unity.solo.InstanceSegmentationAnnotationDefinition', labelers)
-    create_sidebar_entry("Semantic Segmentation", annotator_dic, available_labelers, 'type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition', labelers)
-    # if instance_count > 0 and semantic_count > 0:
-    #     if st.sidebar.checkbox('Segmentation', False) and st.session_state.semantic_existed_last_time:
-    #         selected_segmentation = st.sidebar.radio("Select the segmentation type:",
-    #                                                  ['Semantic Segmentation', 'Instance Segmentation'],
-    #                                                  index=0)
-    #         if selected_segmentation == 'Semantic Segmentation':
-    #             labelers['type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition'] = True
-    #         elif selected_segmentation == 'Instance Segmentation':
-    #             labelers['type.unity.com/unity.solo.InstanceSegmentationAnnotationDefinition'] = True
-    #     st.session_state.semantic_existed_last_time = True
+    create_sidebar_entry("2D Bounding Boxes", annotator_dic, available_labelers,
+                         'type.unity.com/unity.solo.BoundingBoxAnnotationDefinition', labelers)
+    create_sidebar_entry("3D Bounding Boxes", annotator_dic, available_labelers,
+                         'type.unity.com/unity.solo.BoundingBox3DAnnotationDefinition', labelers)
+    create_sidebar_entry("Keypoints", annotator_dic, available_labelers,
+                         'type.unity.com/unity.solo.KeypointAnnotationDefinition', labelers)
+    if instance_count > 0 and semantic_count > 0:
+        if st.sidebar.checkbox('Segmentation', False) and st.session_state.semantic_existed_last_time:
+            segmentation_list = [*annotator_dic['type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition'],
+                                 *annotator_dic['type.unity.com/unity.solo.InstanceSegmentationAnnotationDefinition']]
+            segmentation_names = [seg.name for seg in segmentation_list]
+            semantic_seg_list = annotator_dic['type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition']
+            instance_seg_list = annotator_dic['type.unity.com/unity.solo.InstanceSegmentationAnnotationDefinition']
 
-    # elif semantic_count > 0:
-    #     labelers['type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition'] = st.sidebar.checkbox(
-    #         "Semantic Segmentation")
-    #     st.session_state.semantic_existed_last_time = False
-    # elif instance_count > 0:
-    #     labelers['type.unity.com/unity.solo.InstanceSegmentationAnnotationDefinition'] = st.sidebar.checkbox(
-    #         "Instance Segmentation")
-    #     st.session_state.semantic_existed_last_time = False
-    # else:
-    #     st.session_state.semantic_existed_last_time = False
+            semantic_seg_names = [seg.name for seg in semantic_seg_list]
+            instance_seg_names = [seg.name for seg in instance_seg_list]
+            c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 = st.sidebar.beta_columns(10)
+            selected_segmentation = c2.radio("", segmentation_names)
+            for annotator_segmentation in segmentation_list:
+                if annotator_segmentation.name == selected_segmentation:
+                    annotator_segmentation.state = True
+                    st.session_state[f'{annotator_segmentation.name}_existed_last_time'] = True
+
+            if selected_segmentation in semantic_seg_names:
+                labelers['type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition'] = True
+            elif selected_segmentation in instance_seg_names:
+                labelers['type.unity.com/unity.solo.InstanceSegmentationAnnotationDefinition'] = True
+        st.session_state.semantic_existed_last_time = True
+
     if st.session_state.previous_labelers != labelers:
         st.session_state.labelers_changed = True
     else:
@@ -200,134 +201,80 @@ def display_number_frames(num_frames: int):
     st.sidebar.markdown("### Number of frames: " + str(num_frames))
 
 
-def preview_dataset(base_dataset_dir: str):
-    """
-    Adds streamlit components to the app to construct the dataset preview.
+def preview_dataset(data_root, folder_name):
+    instances = datamaker_dataset(data_root)
 
-    :param base_dataset_dir: The directory that contains the perception dataset.
-    :type base_dataset_dir: str
-    """
+    # if it is not a datamaker dataset
+    if instances is None:
+        # Attempt to read as a normal perception dataset
+        ds = Dataset(data_root)
+        if not ds.dataset_valid:
+            st.warning("The provided Dataset folder \"" + data_root + "\" is not considered valid")
 
-    # Create state with default values
-    create_session_state_data({
-        'zoom_image': '-1',
-        'start_at': '0',
-        'num_cols': '3',
-        'curr_dir': base_dataset_dir,
+            st.markdown("# Please open a dataset folder:")
+            if st.button("Open Dataset", key="second open dataset"):
+                folder_select()
+            return
 
-        'just_opened_zoom': True,
-        'just_opened_grid': True,
+        if len(folder_name) >= 1:
+            st.sidebar.markdown("# Current dataset:")
+            st.sidebar.write(folder_name)
 
-        'bbox2d_existed_last_time': False,
-        'bbox3d_existed_last_time': False,
-        'keypoints_existed_last_time': False,
-        'semantic_existed_last_time': False,
+        # SB HERE
+        dataset_len = ds.metadata["totalFrames"]
+        display_number_frames(dataset_len)
 
-        'previous_labelers': {},
-        'labelers_changed': False,
-    })
+        available_labelers = ds.get_available_labelers()
+        annotator_dic = ds.get_annotator_dictionary()
+        labelers = create_sidebar_labeler_menu(available_labelers, annotator_dic)
 
-    # Gets the latest selected directory
-    base_dataset_dir = st.session_state.curr_dir
+        # zoom_image is negative if the application isn't in zoom mode
+        index = int(st.session_state.zoom_image)
+        if index >= 0:
+            zoom(index, 0, ds, labelers, annotator_dic)
+        else:
+            num_rows = 5
+            grid_view(num_rows, ds, labelers, annotator_dic)
 
-    # Display select dataset menu
-    st.sidebar.markdown("# Select Dataset")
-    if st.sidebar.button("Open Dataset"):
-        folder_select()
-
-    if base_dataset_dir is None:
-        st.markdown("# Please open a dataset folder:")
-        if st.button("Open Dataset", key="second open dataset"):
-            folder_select()
-        return
-
-    # Display name of dataset (Name of folder)
-    dataset_name = os.path.abspath(base_dataset_dir).replace("\\", "/")
-
-    if dataset_name[-1] == '/':
-        folder_name = dataset_name.split('/')[-2]
+    # if it is a datamaker dataset
     else:
-        folder_name = dataset_name.split('/')[-1]
+        if len(folder_name) >= 1:
+            st.sidebar.markdown("# Current dataset:")
+            st.sidebar.write(folder_name)
 
-    if dataset_name is not None and dataset_name.strip() != "":
-        data_root = os.path.abspath(dataset_name)
-        # Attempt to read data_root as a datamaker dataset
-        instances = datamaker_dataset(data_root)
+        display_number_frames(datamaker.get_dataset_length_with_instances(instances))
 
-        # if it is not a datamaker dataset
-        if instances is None:
-            # Attempt to read as a normal perception dataset
-            ds = Dataset(data_root)
-            if not ds.dataset_valid:
-                st.warning("The provided Dataset folder \"" + data_root + "\" is not considered valid")
+        # zoom_image is negative if the application isn't in zoom mode
+        index = int(st.session_state.zoom_image)
+        if index >= 0:
+            instance_key = datamaker.get_instance_by_capture_idx(instances, index)
 
-                st.markdown("# Please open a dataset folder:")
-                if st.button("Open Dataset", key="second open dataset"):
-                    folder_select()
-                return
+            if (instance_key is None):
+                index = 0
+                instance_key = datamaker.get_instance_by_capture_idx(instances, index)
 
-            if len(folder_name) >= 1:
-                st.sidebar.markdown("# Current dataset:")
-                st.sidebar.write(folder_name)
-
-            # SB HERE
-            dataset_len = ds.metadata["totalFrames"]
-            display_number_frames(dataset_len)
-
-            available_labelers = ds.get_available_labelers()
+            offset = datamaker.get_dataset_length_with_instances(instances, instance_key)
+            ds = instances[instance_key]
+            ann_def = ds.ann_def
+            available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
             annotator_dic = ds.get_annotator_dictionary()
             labelers = create_sidebar_labeler_menu(available_labelers, annotator_dic)
-
-            # zoom_image is negative if the application isn't in zoom mode
-            index = int(st.session_state.zoom_image)
-            if index >= 0:
-                zoom(index, 0, ds, labelers)
-            else:
-                num_rows = 5
-                grid_view(num_rows, ds, labelers, annotator_dic)
-
-        # if it is a datamaker dataset
+            zoom(index, offset, ds, labelers, annotator_dic)
         else:
-            if len(folder_name) >= 1:
-                st.sidebar.markdown("# Current dataset:")
-                st.sidebar.write(folder_name)
+            index = st.session_state.start_at
+            num_rows = 5
+            instance_key = datamaker.get_instance_by_capture_idx(instances, index)
 
-            display_number_frames(datamaker.get_dataset_length_with_instances(instances))
-
-            # zoom_image is negative if the application isn't in zoom mode
-            index = int(st.session_state.zoom_image)
-            if index >= 0:
+            if (instance_key is None):
+                st.session_state.start_at = 0
+                index = 0
                 instance_key = datamaker.get_instance_by_capture_idx(instances, index)
 
-                if (instance_key is None):
-                    index = 0
-                    instance_key = datamaker.get_instance_by_capture_idx(instances, index)
-
-                offset = datamaker.get_dataset_length_with_instances(instances, instance_key)
-                ds = instances[instance_key]
-                ann_def = ds.ann_def
-                available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
-                labelers = create_sidebar_labeler_menu(available_labelers)
-                zoom(index, offset, ds, labelers)
-            else:
-                index = st.session_state.start_at
-                num_rows = 5
-                instance_key = datamaker.get_instance_by_capture_idx(instances, index)
-
-                if (instance_key is None):
-                    st.session_state.start_at = 0
-                    index = 0
-                    instance_key = datamaker.get_instance_by_capture_idx(instances, index)
-
-                ds = instances[instance_key]
-                ann_def = ds.ann_def
-                available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
-                labelers = create_sidebar_labeler_menu(available_labelers)
-                grid_view_instances(num_rows, instances, labelers)
-    else:
-        st.markdown("# Please select a valid dataset folder:")
-        if st.button("Select dataset folder"):
-            folder_select()
+            ds = instances[instance_key]
+            ann_def = ds.ann_def
+            available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
+            labelers = create_sidebar_labeler_menu(available_labelers)
+            grid_view_instances(num_rows, instances, labelers)
 
 
 def folder_select():
@@ -434,10 +381,12 @@ def grid_view(num_rows: int, ds: Dataset, labelers: Dict[str, bool], annotator_d
     containers = create_grid_containers(num_rows, num_cols, start_at, dataset_size)
 
     for i in range(start_at, min(start_at + (num_cols * num_rows), dataset_size)):
-        image = ds.get_solo_image_with_labelers(i, labelers, annotator_dic, max_size=get_resolution_from_num_cols(num_cols))
+        image = ds.get_solo_image_with_labelers(i, labelers, annotator_dic,
+                                                max_size=get_resolution_from_num_cols(num_cols))
         sequence = (int)(i / ds.solo.steps_per_sequence)
         step = i % ds.solo.steps_per_sequence
-        containers[i - start_at].image(image, caption="sequence"+str(sequence)+"."+"step"+str(step), use_column_width=True)
+        containers[i - start_at].image(image, caption="sequence" + str(sequence) + "." + "step" + str(step),
+                                       use_column_width=True)
 
 
 def get_resolution_from_num_cols(num_cols):
@@ -472,14 +421,16 @@ def grid_view_instances(
         ann_def = ds.ann_def
         cap = ds.cap
         data_root = ds.data_root
-        image = ds.get_image_with_labelers(i - datamaker.get_dataset_length_with_instances(instances, instance_key), labelers, max_size=(6 - num_cols) * 150)
+        image = ds.get_image_with_labelers(i - datamaker.get_dataset_length_with_instances(instances, instance_key),
+                                           labelers, max_size=(6 - num_cols) * 150)
         containers[i - start_at].image(image, caption=str(i), use_column_width=True)
 
 
 def zoom(index: int,
          offset: int,
          ds: Dataset,
-         labelers: Dict[str, bool]):
+         labelers: Dict[str, bool],
+         annotator_dic):
     """ Creates streamlit components for Zoom in view
 
     :param index: Index of the image
@@ -517,7 +468,6 @@ def zoom(index: int,
 
     components.html("""<hr style="height:2px;border:none;color:#AAA;background-color:#AAA;" /> """, height=30)
 
-    annotator_dic = ds.get_annotator_dictionary()
     index = index - offset
     image = ds.get_solo_image_with_labelers(index, labelers, annotator_dic, max_size=2000)
 
@@ -538,30 +488,3 @@ def zoom(index: int,
         for i in labeler_annotations:
             st.markdown("## " + i['id'])
             st.write(i)
-
-
-def preview_app(args):
-    """
-    Starts the dataset preview app.
-
-    :param args: Arguments for the app, such as dataset
-    :type args: Namespace
-    """
-    preview_dataset(args["data"])
-
-
-if __name__ == "__main__":
-
-    # This needs to be the first streamlit command
-    st.set_page_config(layout="wide")
-    # removes the default zoom button on images
-    st.markdown('<style>button.css-enefr8{display: none;}'
-                '       button.css-1u96g9d{display: none;}</style>', unsafe_allow_html=True)
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("data", type=str)
-    args = parser.parse_args()
-    if os.path.isdir(args.data):
-        preview_app({"data": args.data})
-    else:
-        preview_app({"data": None})

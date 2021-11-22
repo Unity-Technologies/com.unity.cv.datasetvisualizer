@@ -1,0 +1,1875 @@
+{
+  "version": "0.0.1",
+  "metrics": [
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "c5244a8b-e94e-409c-9d41-b3a92e4913cd",
+      "step": 0,
+      "metric_definition": "14adb394-46c0-47e8-a3f0-99e754483b76",
+      "values": [
+        539662031
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "758ba463-87d4-4d09-9b61-9d4b5be3c5bf",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "d4f3641d-e269-4645-a730-ad24ea36e569",
+      "annotation_id": null,
+      "sequence_id": "758ba463-87d4-4d09-9b61-9d4b5be3c5bf",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "d4f3641d-e269-4645-a730-ad24ea36e569",
+      "annotation_id": null,
+      "sequence_id": "758ba463-87d4-4d09-9b61-9d4b5be3c5bf",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 18478
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 60483
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 64817
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 218392
+        }
+      ]
+    },
+    {
+      "capture_id": "68250045-5b5f-4adc-8b95-f93350853c36",
+      "annotation_id": null,
+      "sequence_id": "758ba463-87d4-4d09-9b61-9d4b5be3c5bf",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "68250045-5b5f-4adc-8b95-f93350853c36",
+      "annotation_id": null,
+      "sequence_id": "758ba463-87d4-4d09-9b61-9d4b5be3c5bf",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 18129
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 60354
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 64356
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 219331
+        }
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "b01e0fc8-a951-4fcf-aa0a-dd9b44fb70a8",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 1
+        }
+      ]
+    },
+    {
+      "capture_id": "4ec17a93-26c4-4f72-95c5-04f21ab188ee",
+      "annotation_id": null,
+      "sequence_id": "b01e0fc8-a951-4fcf-aa0a-dd9b44fb70a8",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "4ec17a93-26c4-4f72-95c5-04f21ab188ee",
+      "annotation_id": null,
+      "sequence_id": "b01e0fc8-a951-4fcf-aa0a-dd9b44fb70a8",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17824
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 60124
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 63675
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 220547
+        }
+      ]
+    },
+    {
+      "capture_id": "a5a91325-555a-4515-b33d-42c6492b0d08",
+      "annotation_id": null,
+      "sequence_id": "b01e0fc8-a951-4fcf-aa0a-dd9b44fb70a8",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "a5a91325-555a-4515-b33d-42c6492b0d08",
+      "annotation_id": null,
+      "sequence_id": "b01e0fc8-a951-4fcf-aa0a-dd9b44fb70a8",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17582
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 59798
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 62776
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 222014
+        }
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "f08dd4c9-9c47-43cf-a7fe-efb30ac286db",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 2
+        }
+      ]
+    },
+    {
+      "capture_id": "8ac6d2ca-1042-47ef-b392-5b91d69bcbe0",
+      "annotation_id": null,
+      "sequence_id": "f08dd4c9-9c47-43cf-a7fe-efb30ac286db",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "8ac6d2ca-1042-47ef-b392-5b91d69bcbe0",
+      "annotation_id": null,
+      "sequence_id": "f08dd4c9-9c47-43cf-a7fe-efb30ac286db",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17399
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 59389
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 61667
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 223715
+        }
+      ]
+    },
+    {
+      "capture_id": "e1ec6a2b-8584-40dc-8ffc-23fb45242c89",
+      "annotation_id": null,
+      "sequence_id": "f08dd4c9-9c47-43cf-a7fe-efb30ac286db",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "e1ec6a2b-8584-40dc-8ffc-23fb45242c89",
+      "annotation_id": null,
+      "sequence_id": "f08dd4c9-9c47-43cf-a7fe-efb30ac286db",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17263
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 58873
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 60527
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 225507
+        }
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "4cd252a4-9ec5-4c13-a21d-6cc90cbce121",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 3
+        }
+      ]
+    },
+    {
+      "capture_id": "18d5bb2a-4079-463e-8ba5-30c73c2c59c2",
+      "annotation_id": null,
+      "sequence_id": "4cd252a4-9ec5-4c13-a21d-6cc90cbce121",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "18d5bb2a-4079-463e-8ba5-30c73c2c59c2",
+      "annotation_id": null,
+      "sequence_id": "4cd252a4-9ec5-4c13-a21d-6cc90cbce121",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17184
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 58282
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 61752
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 224952
+        }
+      ]
+    },
+    {
+      "capture_id": "a1ccac12-887e-4578-b1bb-5d7aa2c290a7",
+      "annotation_id": null,
+      "sequence_id": "4cd252a4-9ec5-4c13-a21d-6cc90cbce121",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "a1ccac12-887e-4578-b1bb-5d7aa2c290a7",
+      "annotation_id": null,
+      "sequence_id": "4cd252a4-9ec5-4c13-a21d-6cc90cbce121",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17150
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 57594
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 62851
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 224575
+        }
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "c10d273c-8848-401a-af26-a19364c2bc20",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 4
+        }
+      ]
+    },
+    {
+      "capture_id": "93646413-1948-4267-8b4a-304a7dc5080c",
+      "annotation_id": null,
+      "sequence_id": "c10d273c-8848-401a-af26-a19364c2bc20",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "93646413-1948-4267-8b4a-304a7dc5080c",
+      "annotation_id": null,
+      "sequence_id": "c10d273c-8848-401a-af26-a19364c2bc20",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17180
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 56825
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 63874
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 224291
+        }
+      ]
+    },
+    {
+      "capture_id": "eed49e73-63ed-4080-b2a6-bef8cf14a1ef",
+      "annotation_id": null,
+      "sequence_id": "c10d273c-8848-401a-af26-a19364c2bc20",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "eed49e73-63ed-4080-b2a6-bef8cf14a1ef",
+      "annotation_id": null,
+      "sequence_id": "c10d273c-8848-401a-af26-a19364c2bc20",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17254
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 55984
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 64815
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 224117
+        }
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "b0878086-78a1-4e6a-82eb-45d0f49e53d2",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 5
+        }
+      ]
+    },
+    {
+      "capture_id": "4203064d-ba38-4d65-a82a-e8d1ceedb2bb",
+      "annotation_id": null,
+      "sequence_id": "b0878086-78a1-4e6a-82eb-45d0f49e53d2",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "4203064d-ba38-4d65-a82a-e8d1ceedb2bb",
+      "annotation_id": null,
+      "sequence_id": "b0878086-78a1-4e6a-82eb-45d0f49e53d2",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17383
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 55034
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 65667
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 224086
+        }
+      ]
+    },
+    {
+      "capture_id": "08686897-219f-4368-a115-7852f878e4ba",
+      "annotation_id": null,
+      "sequence_id": "b0878086-78a1-4e6a-82eb-45d0f49e53d2",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "08686897-219f-4368-a115-7852f878e4ba",
+      "annotation_id": null,
+      "sequence_id": "b0878086-78a1-4e6a-82eb-45d0f49e53d2",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17542
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 54011
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 66413
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 224204
+        }
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "19da6000-3f39-4d98-ac29-39759ccb0710",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 6
+        }
+      ]
+    },
+    {
+      "capture_id": "b2b381fa-b6fa-40be-82a1-907f158a1572",
+      "annotation_id": null,
+      "sequence_id": "19da6000-3f39-4d98-ac29-39759ccb0710",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "b2b381fa-b6fa-40be-82a1-907f158a1572",
+      "annotation_id": null,
+      "sequence_id": "19da6000-3f39-4d98-ac29-39759ccb0710",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17716
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 52904
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 67097
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 224453
+        }
+      ]
+    },
+    {
+      "capture_id": "536bb164-1e99-40fa-8919-ac3fe1a5c95a",
+      "annotation_id": null,
+      "sequence_id": "19da6000-3f39-4d98-ac29-39759ccb0710",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "536bb164-1e99-40fa-8919-ac3fe1a5c95a",
+      "annotation_id": null,
+      "sequence_id": "19da6000-3f39-4d98-ac29-39759ccb0710",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 17908
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 53708
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 67681
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 222873
+        }
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "a8b96693-7b77-4ac7-a800-6fab86ed6ded",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 7
+        }
+      ]
+    },
+    {
+      "capture_id": "5a911e1e-4366-4d4e-bf68-2916fb9078fd",
+      "annotation_id": null,
+      "sequence_id": "a8b96693-7b77-4ac7-a800-6fab86ed6ded",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "5a911e1e-4366-4d4e-bf68-2916fb9078fd",
+      "annotation_id": null,
+      "sequence_id": "a8b96693-7b77-4ac7-a800-6fab86ed6ded",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 18118
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 54595
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 68153
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 221304
+        }
+      ]
+    },
+    {
+      "capture_id": "42f2f984-4447-449f-ae44-eced79fc70a0",
+      "annotation_id": null,
+      "sequence_id": "a8b96693-7b77-4ac7-a800-6fab86ed6ded",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "42f2f984-4447-449f-ae44-eced79fc70a0",
+      "annotation_id": null,
+      "sequence_id": "a8b96693-7b77-4ac7-a800-6fab86ed6ded",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 18309
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 55287
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 68545
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 220029
+        }
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "6ac85302-27fd-4366-ab1f-08f2dd3ca300",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 8
+        }
+      ]
+    },
+    {
+      "capture_id": "6757fb71-0266-4cfe-8737-b3f0792fba39",
+      "annotation_id": null,
+      "sequence_id": "6ac85302-27fd-4366-ab1f-08f2dd3ca300",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "6757fb71-0266-4cfe-8737-b3f0792fba39",
+      "annotation_id": null,
+      "sequence_id": "6ac85302-27fd-4366-ab1f-08f2dd3ca300",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 18471
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 55772
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 68826
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 219101
+        }
+      ]
+    },
+    {
+      "capture_id": "c3be9df9-75f0-4894-8cda-5f1ddf8801d2",
+      "annotation_id": null,
+      "sequence_id": "6ac85302-27fd-4366-ab1f-08f2dd3ca300",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "c3be9df9-75f0-4894-8cda-5f1ddf8801d2",
+      "annotation_id": null,
+      "sequence_id": "6ac85302-27fd-4366-ab1f-08f2dd3ca300",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 18423
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 56087
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 69000
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 218660
+        }
+      ]
+    },
+    {
+      "capture_id": null,
+      "annotation_id": null,
+      "sequence_id": "97fb22b0-e3e3-4f3f-9c18-267d49032a57",
+      "step": 0,
+      "metric_definition": "db1b258e-d1d0-41b6-8751-16f601a2e230",
+      "values": [
+        {
+          "iteration": 9
+        }
+      ]
+    },
+    {
+      "capture_id": "cd413ca2-fa7b-411d-900f-cb5d6bdc6bcd",
+      "annotation_id": null,
+      "sequence_id": "97fb22b0-e3e3-4f3f-9c18-267d49032a57",
+      "step": 0,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "cd413ca2-fa7b-411d-900f-cb5d6bdc6bcd",
+      "annotation_id": null,
+      "sequence_id": "97fb22b0-e3e3-4f3f-9c18-267d49032a57",
+      "step": 0,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 18234
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 56182
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 69060
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 218694
+        }
+      ]
+    },
+    {
+      "capture_id": "e6ad362b-18a8-4c94-a0ae-199416536978",
+      "annotation_id": null,
+      "sequence_id": "97fb22b0-e3e3-4f3f-9c18-267d49032a57",
+      "step": 1,
+      "metric_definition": "51da3c27-369d-4929-aea6-d01614635ce2",
+      "values": [
+        {
+          "label_id": 1,
+          "label_name": "Crate",
+          "count": 1
+        },
+        {
+          "label_id": 2,
+          "label_name": "Cube",
+          "count": 1
+        },
+        {
+          "label_id": 3,
+          "label_name": "Box",
+          "count": 1
+        },
+        {
+          "label_id": 4,
+          "label_name": "Terrain",
+          "count": 1
+        },
+        {
+          "label_id": 5,
+          "label_name": "Character",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "capture_id": "e6ad362b-18a8-4c94-a0ae-199416536978",
+      "annotation_id": null,
+      "sequence_id": "97fb22b0-e3e3-4f3f-9c18-267d49032a57",
+      "step": 1,
+      "metric_definition": "5ba92024-b3b7-41a7-9d3f-c03a6a8ddd01",
+      "values": [
+        {
+          "label_id": 2,
+          "instance_id": 3,
+          "instance_color": {
+            "r": 149,
+            "g": 255,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 18062
+        },
+        {
+          "label_id": 3,
+          "instance_id": 4,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 223,
+            "a": 255
+          },
+          "visible_pixels": 56088
+        },
+        {
+          "label_id": 1,
+          "instance_id": 1,
+          "instance_color": {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "visible_pixels": 69008
+        },
+        {
+          "label_id": 4,
+          "instance_id": 2,
+          "instance_color": {
+            "r": 0,
+            "g": 74,
+            "b": 255,
+            "a": 255
+          },
+          "visible_pixels": 219012
+        }
+      ]
+    }
+  ]
+}
