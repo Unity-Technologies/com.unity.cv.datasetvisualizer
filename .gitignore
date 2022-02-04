@@ -3,3 +3,6 @@
 *.iml
 *.xml
 *.xml
+
+# node_modules for the multiple react projects for each custom component
+**/node_modules
