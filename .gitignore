@@ -6,3 +6,8 @@
 
 # node_modules for the multiple react projects for each custom component
 **/node_modules
+
+# Streamlit component virtual environments
+**/streamlit_components_react_projects/**/myvenv/
+**/streamlit_components_react_projects/**/venv/
+**/streamlit_components_react_projects/**/frontend/build
