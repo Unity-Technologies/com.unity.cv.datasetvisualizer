@@ -8,7 +8,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from datasetinsights.datasets.unity_perception import AnnotationDefinitions, MetricDefinitions
 from datasetinsights.datasets.unity_perception.captures import Captures
-import helpers.unity_components as cc
+import helpers.unity_component_library as cc
 from datasetvisualizer.SoloDataset import Dataset
 import helpers.datamaker_dataset_helper as datamaker
 
@@ -198,9 +198,9 @@ def preview_dataset(data_root, folder_name):
         if not ds.dataset_valid:
             st.warning("The provided Dataset folder \"" + data_root + "\" is not considered valid")
 
-            st.markdown("# Please open a dataset folder:")
-            if st.button("Open Dataset", key="second open dataset"):
-                folder_select()
+            #st.markdown("# Please open a dataset folder:")
+            #if st.button("Open Dataset", key="second open dataset"):
+            #    folder_select()
             return
 
         if len(folder_name) >= 1:

@@ -1,6 +1,7 @@
 .cache/
 .idea/workspace.xml
 **/.idea/
+**/.vs
 *.iml
 *.xml
 *.xml

@@ -8,7 +8,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from datasetinsights.datasets.unity_perception import AnnotationDefinitions, MetricDefinitions
 from datasetinsights.datasets.unity_perception.captures import Captures
-import helpers.unity_components as cc
+import helpers.unity_component_library as cc
 import helpers.datamaker_dataset_helper as datamaker
 from datasetvisualizer.LegacyDataset import Dataset
 
