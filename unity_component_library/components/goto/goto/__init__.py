@@ -82,11 +82,4 @@ def go_to(key=None):
 # app: `$ streamlit run grid_view_settings/__init__.py`
 if not _RELEASE:
     import streamlit as st
-
-    st.subheader("Component with constant args")
-
     start_at = go_to()
-
-
-    st.markdown("Should go to index:  %s!" % start_at)
-

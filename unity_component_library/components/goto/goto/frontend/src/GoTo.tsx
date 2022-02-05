@@ -23,29 +23,27 @@ class GoTo extends StreamlitComponentBase<State> {
     )
   }
 
-
   public render = (): ReactNode => {
-
-    return (
-      <div>
-        <p style={{fontFamily: "\"IBM Plex Sans\", sans-serif", fontSize:"1rem", color: "rgb(38, 39, 48)"}}>
-          Go to index:
-        </p>
-        <TextField
-          label="Index"
-          id="outlined-size-small"
-          defaultValue=""
-          type="number"
-          variant="outlined"
-          size="small"
-          onChange={e => this.handleIndexChange(e.target.value)}
-          style={{
-            marginBottom: "20px",
-            marginTop: "-10px",
-          }}
-        />
-      </div>
-    )
+      return (
+          <div style={{
+              display: "flex"
+          }}>
+              <p>Start at index:</p>
+              <TextField
+                  label="Index"
+                  id="outlined-size-small"
+                  defaultValue=""
+                  type="number"
+                  variant="outlined"
+                  size="small"
+                  onChange={e => this.handleIndexChange(e.target.value)}
+                  style={{
+                      marginBottom: "20px",
+                      marginTop: "-10px",
+                  }}
+              />
+          </div>
+      );
   }
 }
 
