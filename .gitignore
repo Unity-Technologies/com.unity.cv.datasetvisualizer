@@ -5,6 +5,7 @@
 *.iml
 *.xml
 *.xml
+**/.yarn/cache
 
 # node_modules for the multiple react projects for each custom component
 **/node_modules
