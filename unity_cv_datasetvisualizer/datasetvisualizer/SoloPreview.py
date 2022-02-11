@@ -242,8 +242,7 @@ def preview_dataset(data_root, folder_name):
 
             offset = datamaker.get_dataset_length_with_instances(instances, instance_key)
             ds = instances[instance_key]
-            ann_def = ds.ann_def
-            available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
+            available_labelers = ds.get_available_labelers()
             annotator_dic = ds.get_annotator_dictionary()
             labelers = create_sidebar_labeler_menu(available_labelers, annotator_dic)
             zoom(index, offset, ds, labelers, annotator_dic)
@@ -258,10 +257,10 @@ def preview_dataset(data_root, folder_name):
                 instance_key = datamaker.get_instance_by_capture_idx(instances, index)
 
             ds = instances[instance_key]
-            ann_def = ds.ann_def
-            available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
-            labelers = create_sidebar_labeler_menu(available_labelers)
-            grid_view_instances(num_rows, instances, labelers)
+            available_labelers = ds.get_available_labelers()
+            annotator_dic = ds.get_annotator_dictionary()
+            labelers = create_sidebar_labeler_menu(available_labelers, annotator_dic)
+            grid_view_instances(num_rows, instances, labelers, annotator_dic)
 
 
 def folder_select():
@@ -386,7 +385,8 @@ def get_resolution_from_num_cols(num_cols):
 def grid_view_instances(
         num_rows: int,
         instances: Dict[int, Tuple[AnnotationDefinitions, MetricDefinitions, Captures, int, str]],
-        labelers: Dict[str, bool]):
+        labelers: Dict[str, bool],
+        annotator_dic):
     """ Creates the grid view streamlit components when using a Datamaker dataset
 
     :param num_rows: Number of rows
@@ -405,11 +405,8 @@ def grid_view_instances(
     for i in range(start_at, min(start_at + (num_cols * num_rows), dataset_size)):
         instance_key = datamaker.get_instance_by_capture_idx(instances, i)
         ds = instances[instance_key]
-        ann_def = ds.ann_def
-        cap = ds.cap
-        data_root = ds.data_root
         image = ds.get_solo_image_with_labelers(i - datamaker.get_dataset_length_with_instances(instances, instance_key),
-                                           labelers, max_size=(6 - num_cols) * 150)
+                                           labelers, annotator_dic, max_size=(6 - num_cols) * 150)
         containers[i - start_at].image(image, caption=str(i), use_column_width=True)
 
 

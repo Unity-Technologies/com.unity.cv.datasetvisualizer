@@ -1,12 +1,14 @@
-﻿import json
+﻿import glob
+import json
 import os
+import shutil
 from os import listdir
 from os.path import isfile, join
 from typing import Dict
 from PIL import Image
 from google.protobuf.json_format import MessageToDict
-from unity_vision.consumers.solo.parser import Solo
-from unity_vision.protos.solo_pb2 import (
+from unityVisionLocal.unity_vision.consumers.solo.parser import Solo
+from unityVisionLocal.unity_vision.protos.solo_pb2 import (
     BoundingBox2DAnnotation,
     BoundingBox3DAnnotation,
     InstanceSegmentationAnnotation,
@@ -34,7 +36,21 @@ class Dataset:
             annotate_file = "annotation_definitions.json"
             metric_file = "metric_definitions.json"
             sensor_file = "sensor_definitions.json"
-            files = [f for f in listdir(base_dataset_dir) if isfile(join(base_dataset_dir, f))]
+            # if it is a not datamaker dataset
+            if os.path.isfile(os.path.join(base_dataset_dir, "metadata" + "." + "json")):
+                files = [f for f in listdir(base_dataset_dir) if isfile(join(base_dataset_dir, f))]
+
+            # if it is a datamaker dataset
+            else:
+                metadata_dir = glob.glob(base_dataset_dir+'/*/*/*/*metadata')[0]
+                data_dir = glob.glob(base_dataset_dir + '/*/*/*/')[0]
+                for fn in os.listdir(metadata_dir):
+                    full_file_name = os.path.join(metadata_dir, fn)
+                    if full_file_name.endswith(".json"):
+                        shutil.copy(full_file_name, data_dir)
+
+                files = [f for f in listdir(data_dir) if isfile(join(data_dir, f))]
+
             if meta_file in files:
                 found_solo_meta = True
             if annotate_file in files:
@@ -46,6 +62,7 @@ class Dataset:
             return found_solo_meta and found_solo_annotate and found_solo_metric and found_solo_sensor
         except PermissionError:
             return False
+        return True
 
     def __init__(self, data_root: str):
         if Dataset.check_folder_valid(data_root):
@@ -140,7 +157,10 @@ class Dataset:
             annotator_dic: Dict[str, AnnotatorNameState],
             max_size: int = 500) -> Image:
 
-        self.solo.jump_to(index)
+        # self.solo.jump_to(index)
+        self.solo.__load_frame__(index)
+        # self.solo._unpack_annotations()
+        # self.solo._unpack_sensors()
 
         sensor = self.solo.sensors()[0]['message']
         part_a = self.solo.sequence_path
