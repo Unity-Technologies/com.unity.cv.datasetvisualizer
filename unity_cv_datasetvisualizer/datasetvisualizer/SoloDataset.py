@@ -7,8 +7,8 @@ from os.path import isfile, join
 from typing import Dict
 from PIL import Image
 from google.protobuf.json_format import MessageToDict
-from unityVisionLocal.unity_vision.consumers.solo.parser import Solo
-from unityVisionLocal.unity_vision.protos.solo_pb2 import (
+from unity_vision.consumers.solo.parser import Solo
+from unity_vision.protos.solo_pb2 import (
     BoundingBox2DAnnotation,
     BoundingBox3DAnnotation,
     InstanceSegmentationAnnotation,
@@ -42,14 +42,14 @@ class Dataset:
 
             # if it is a datamaker dataset
             else:
-                metadata_dir = glob.glob(base_dataset_dir+'/*/*/*/*metadata')[0]
-                data_dir = glob.glob(base_dataset_dir + '/*/*/*/')[0]
+                metadata_dir = glob.glob(base_dataset_dir+'/*/*/*metadata')[0]
+                data_dir = glob.glob(base_dataset_dir + '/*/*/')[0]
                 for fn in os.listdir(metadata_dir):
                     full_file_name = os.path.join(metadata_dir, fn)
                     if full_file_name.endswith(".json"):
                         shutil.copy(full_file_name, data_dir)
 
-                files = [f for f in listdir(data_dir) if isfile(join(data_dir, f))]
+                files = [f for f in listdir(metadata_dir) if isfile(join(metadata_dir, f))]
 
             if meta_file in files:
                 found_solo_meta = True
@@ -157,14 +157,9 @@ class Dataset:
             annotator_dic: Dict[str, AnnotatorNameState],
             max_size: int = 500) -> Image:
 
-        # self.solo.jump_to(index)
-        self.solo.__load_frame__(index)
-        # self.solo._unpack_annotations()
-        # self.solo._unpack_sensors()
+        self.solo.jump_to(index)
 
         sensor = self.solo.sensors()[0]['message']
-        part_a = self.solo.sequence_path
-        part_b = sensor.filename
         filename = os.path.join(self.solo.sequence_path, sensor.filename)
         image = Image.open(filename)
 
@@ -176,10 +171,11 @@ class Dataset:
                 if annotator.state:
                     bbox_data = self._get_annotation_from_sensor(sensor, annotator,
                                                                  BOUNDING_BOX_TYPE)
-                    label_mappings = {
-                        m["labelId"]: m["labelName"] for m in bbox_data['values']
-                    }
-                    image = v.draw_solo_image_with_boxes(image, bbox_data, label_mappings)
+                    if 'values' in bbox_data:
+                        label_mappings = {
+                            m["labelId"]: m["labelName"] for m in bbox_data['values']
+                        }
+                        image = v.draw_solo_image_with_boxes(image, bbox_data, label_mappings)
 
         if KEYPOINT_TYPE in labelers_to_use and labelers_to_use[KEYPOINT_TYPE]:
             for annotator in annotator_dic[KEYPOINT_TYPE]:
