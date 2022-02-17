@@ -157,7 +157,7 @@ class Dataset:
             annotator_dic: Dict[str, AnnotatorNameState],
             max_size: int = 500) -> Image:
 
-        self.solo.jump_to(index)
+        self.solo.__load_frame__(index)
 
         sensor = self.solo.sensors()[0]['message']
         filename = os.path.join(self.solo.sequence_path, sensor.filename)
