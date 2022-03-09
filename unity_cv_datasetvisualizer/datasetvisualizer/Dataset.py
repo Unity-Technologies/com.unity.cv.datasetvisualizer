@@ -13,7 +13,6 @@ class Dataset:
     def check_folder_valid(base_dataset_dir: str):
         found_dataset = False
         found_rgb = False
-        found_logs = False
         try:
             children_dirs = [os.path.basename(f.path.replace("\\", "/")) for f in os.scandir(base_dataset_dir) if
                              f.is_dir()]
@@ -22,9 +21,7 @@ class Dataset:
                     found_dataset = True
                 elif children_dir.startswith("RGB"):
                     found_rgb = True
-                elif children_dir == "Logs":
-                    found_logs = True
-            return found_dataset and found_rgb and found_logs
+            return found_dataset and found_rgb
         except PermissionError:
             return False
 
