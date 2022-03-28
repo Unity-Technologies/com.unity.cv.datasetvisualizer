@@ -1,6 +1,6 @@
 ﻿from typing import Dict
 
-from datasetvisualizer.SoloDataset import Dataset
+from SoloDataset import Dataset
 
 def get_instance_by_capture_idx(
         instances: Dict[int, Dataset], index: int) \

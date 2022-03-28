@@ -1,1 +1,1 @@
-recursive-include datasetvisualizer/custom_components *
+recursive-include built_components *

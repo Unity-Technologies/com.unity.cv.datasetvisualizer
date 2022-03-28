@@ -1,0 +1,17 @@
+{
+  "packageManager": "yarn@3.1.1",
+  "name": "unity_cv_datasetvisualizer_repo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "unity_component_library/components/item_selector",
+    "unity_component_library/components/item_selector_zoom",
+    "unity_component_library/components/page_selector"
+  ],
+  "scripts": {
+    "dev": "yarn startServer",
+    "componentDev": "yarn startComponents & yarn startServer",
+    "startComponents": "yarn workspace item_selector start & yarn workspace item_selector_zoom start & yarn workspace page_selector start",
+    "startServer": "python3 unity_cv_datasetvisualizer/cli.py"
+  }
+}

@@ -6,10 +6,12 @@ import sys
 from typing import Dict
 import streamlit as st
 import streamlit.components.v1 as components
-from datasetvisualizer.LegacyDataset import Dataset as LegacyDataset
-from datasetvisualizer.LegacyPreview import preview_dataset as legacy_preview_dataset
-from datasetvisualizer.SoloDataset import Dataset as SoloDataset
-from datasetvisualizer.SoloPreview import preview_dataset as solo_preview_dataset
+from LegacyDataset import Dataset as LegacyDataset
+from LegacyPreview import preview_dataset as legacy_preview_dataset
+from SoloDataset import Dataset as SoloDataset
+from SoloPreview import preview_dataset as solo_preview_dataset
+import pathlib
+
 
 
 def create_session_state_data(attribute_values: Dict[str, any]):
@@ -60,9 +62,10 @@ def create_select_dataset_page(base_dataset_dir: str):
         folder_select()
 
     if base_dataset_dir is None:
-        st.markdown("# Please open a dataset folder:")
-        if st.button("Open Dataset", key="second open dataset"):
-            folder_select()
+        st.markdown("# Unity CV Dataset Visualizer")
+        st.image("https://github.com/Unity-Technologies/com.unity.perception/blob/main/com.unity.perception/Documentation~/images/banner2.PNG")
+        #if st.button("Open Dataset", key="second open dataset"):
+        #    folder_select()
         return
 
     # Display name of dataset (Name of folder)
@@ -134,10 +137,12 @@ if __name__ == "__main__":
     st.markdown('<style>button.css-enefr8{display: none;}'
                 '       button.css-1u96g9d{display: none;}</style>', unsafe_allow_html=True)
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("data", type=str)
-    args = parser.parse_args()
-    if os.path.isdir(args.data):
-        preview_app({"data": args.data})
-    else:
-        preview_app({"data": None})
+    # TODO: Add back the ability to take in --data command from CLI
+    #parser = argparse.ArgumentParser()
+    #parser.add_argument("--data", type=str)
+    #args = parser.parse_args()
+    #
+    #if "data" in args and os.path.isdir(args.data):
+    #    preview_app({"data": args.data})
+    #else:
+    preview_app({"data": None})

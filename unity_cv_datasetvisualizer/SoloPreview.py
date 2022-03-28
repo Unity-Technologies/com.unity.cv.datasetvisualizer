@@ -1,17 +1,22 @@
 import json
 import os
-import re
-import subprocess
 import sys
+import subprocess
 from typing import List, Tuple, Optional, Dict
+import re
 import streamlit as st
 import streamlit.components.v1 as components
 from datasetinsights.datasets.unity_perception import AnnotationDefinitions, MetricDefinitions
 from datasetinsights.datasets.unity_perception.captures import Captures
 import helpers.unity_component_library as cc
+from SoloDataset import Dataset
 import helpers.datamaker_dataset_helper as datamaker
-from datasetvisualizer.LegacyDataset import Dataset
 
+SEMANTIC_SEGMENTATION_TYPE = 'type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition'
+INSTANCE_SEGMENTATION_TYPE = 'type.unity.com/unity.solo.InstanceSegmentationAnnotationDefinition'
+BOUNDING_BOX_TYPE = 'type.unity.com/unity.solo.BoundingBoxAnnotationDefinition'
+BOUNDING_BOX_3D_TYPE = 'type.unity.com/unity.solo.BoundingBox3DAnnotationDefinition'
+KEYPOINT_TYPE = 'type.unity.com/unity.solo.KeypointAnnotationDefinition'
 
 def datamaker_dataset(path: str) -> Optional[Dict[int, Dataset]]:
     """ Reads the given path as a datamaker dataset
@@ -26,8 +31,8 @@ def datamaker_dataset(path: str) -> Optional[Dict[int, Dataset]]:
         :param path: path to dataset
         :type path: str
 
-        :return: Dictionary containing an entry for every instance, the key is the instance number, 
-                each entry is a tuple as follows: (AnnotationDefinition, MetricDefiniton, Captures, number of captures, 
+        :return: Dictionary containing an entry for every instance, the key is the instance number,
+                each entry is a tuple as follows: (AnnotationDefinition, MetricDefiniton, Captures, number of captures,
                 absolute path to instance)
         :rtype: Dict[int, (AnnotationDefinitions, MetricDefinitions, Captures, int, str)]
     """
@@ -60,7 +65,7 @@ def read_datamaker_instance_output(path, instances):
 
 
 def create_session_state_data(attribute_values: Dict[str, any]):
-    """ Takes a dictionary of attributes to values to create the streamlit session_state object. 
+    """ Takes a dictionary of attributes to values to create the streamlit session_state object.
     The values are the default values
 
     :param attribute_values: dictionary of session_state parameter to default values
@@ -71,7 +76,36 @@ def create_session_state_data(attribute_values: Dict[str, any]):
             st.session_state[key] = attribute_values[key]
 
 
-def create_sidebar_labeler_menu(available_labelers: List[str]) -> Dict[str, bool]:
+def create_sidebar_entry(label, annotator_dic, available_labelers, label_type, labelers):
+    states = {}
+
+    for l in available_labelers:
+        if l['type'] != label_type:
+            continue
+        states['name'] = l['name']
+        states['state'] = True
+
+    if len(states) > 0:
+        labelers[label_type] = st.sidebar.checkbox(label) and st.session_state[f'{label_type}_existed_last_time']
+        st.session_state[f'{label_type}_existed_last_time'] = True
+
+        annotator_list = annotator_dic[label_type]
+        if len(annotator_list) == 1:
+            annotator = annotator_list[0]
+            annotator.state = labelers[label_type]
+        if labelers[label_type] and st.session_state[f'{label_type}_existed_last_time'] and len(annotator_list) > 1:
+            # this is a really bad way to do this, but it's the only thing I can figure out to use to get this donw
+            c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 = st.sidebar.beta_columns(10)
+
+            for annotator in annotator_list:
+                annotator.state = c2.checkbox(annotator.name, value=True)
+                st.session_state[f'{annotator.name}_existed_last_time'] = True
+
+    else:
+        st.session_state[f'{label_type}_existed_last_time'] = False
+
+
+def create_sidebar_labeler_menu(available_labelers: List[str], annotator_dic) -> Dict[str, bool]:
     """
     Creates a streamlit sidebar menu that displays checkboxes and radio buttons to select which labelers to display
 
@@ -89,44 +123,53 @@ def create_sidebar_labeler_menu(available_labelers: List[str]) -> Dict[str, bool
 
     st.sidebar.markdown("# Visualize Labels")
     labelers = {}
-    if 'bounding box' in available_labelers:
-        labelers['bounding box'] = st.sidebar.checkbox(
-            "2D Bounding Boxes") and st.session_state.bbox2d_existed_last_time
-        st.session_state.bbox2d_existed_last_time = True
-    else:
-        st.session_state.bbox2d_existed_last_time = False
 
-    if 'bounding box 3D' in available_labelers:
-        labelers['bounding box 3D'] = st.sidebar.checkbox(
-            "3D Bounding Boxes") and st.session_state.bbox3d_existed_last_time
-        st.session_state.bbox3d_existed_last_time = True
-    else:
-        st.session_state.bbox3d_existed_last_time = False
+    bbox_count = 0;
+    semantic_count = 0;
+    instance_count = 0;
+    bbox3d_count = 0;
+    keypoints_count = 0;
 
-    if 'keypoints' in available_labelers:
-        labelers['keypoints'] = st.sidebar.checkbox("Key Points") and st.session_state.keypoints_existed_last_time
-        st.session_state.keypoints_existed_last_time = True
-    else:
-        st.session_state.keypoints_existed_last_time = False
+    for labeler in available_labelers:
+        if labeler['type'] == BOUNDING_BOX_TYPE:
+            bbox_count = bbox_count + 1
+        if labeler['type'] == BOUNDING_BOX_3D_TYPE:
+            bbox3d_count = bbox3d_count + 1
+        if labeler['type'] == KEYPOINT_TYPE:
+            keypoints_count = keypoints_count + 1
+        if labeler['type'] == INSTANCE_SEGMENTATION_TYPE:
+            instance_count = instance_count + 1
+        if labeler['type'] == SEMANTIC_SEGMENTATION_TYPE:
+            semantic_count = semantic_count + 1
 
-    if 'instance segmentation' in available_labelers and 'semantic segmentation' in available_labelers:
+    create_sidebar_entry("2D Bounding Boxes", annotator_dic, available_labelers,
+                         BOUNDING_BOX_TYPE, labelers)
+    create_sidebar_entry("3D Bounding Boxes", annotator_dic, available_labelers,
+                         BOUNDING_BOX_3D_TYPE, labelers)
+    create_sidebar_entry("Keypoints", annotator_dic, available_labelers,
+                         KEYPOINT_TYPE, labelers)
+    if instance_count > 0 or semantic_count > 0:
         if st.sidebar.checkbox('Segmentation', False) and st.session_state.semantic_existed_last_time:
-            selected_segmentation = st.sidebar.radio("Select the segmentation type:",
-                                                     ['Semantic Segmentation', 'Instance Segmentation'],
-                                                     index=0)
-            if selected_segmentation == 'Semantic Segmentation':
-                labelers['semantic segmentation'] = True
-            elif selected_segmentation == 'Instance Segmentation':
-                labelers['instance segmentation'] = True
+            semantic_seg_list = annotator_dic.get(SEMANTIC_SEGMENTATION_TYPE, [])
+            instance_seg_list = annotator_dic.get(INSTANCE_SEGMENTATION_TYPE, [])
+            segmentation_list = semantic_seg_list + instance_seg_list
+            segmentation_names = [seg.name for seg in segmentation_list if seg is not None]
+
+            semantic_seg_names = [seg.name for seg in semantic_seg_list]
+            instance_seg_names = [seg.name for seg in instance_seg_list]
+            c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 = st.sidebar.beta_columns(10)
+            selected_segmentation = c2.radio("", segmentation_names)
+            for annotator_segmentation in segmentation_list:
+                if annotator_segmentation.name == selected_segmentation:
+                    annotator_segmentation.state = True
+                    st.session_state[f'{annotator_segmentation.name}_existed_last_time'] = True
+
+            if selected_segmentation in semantic_seg_names:
+                labelers[SEMANTIC_SEGMENTATION_TYPE] = True
+            elif selected_segmentation in instance_seg_names:
+                labelers[INSTANCE_SEGMENTATION_TYPE] = True
         st.session_state.semantic_existed_last_time = True
-    elif 'semantic segmentation' in available_labelers:
-        labelers['semantic segmentation'] = st.sidebar.checkbox("Semantic Segmentation")
-        st.session_state.semantic_existed_last_time = False
-    elif 'instance segmentation' in available_labelers:
-        labelers['instance segmentation'] = st.sidebar.checkbox("Instance Segmentation")
-        st.session_state.semantic_existed_last_time = False
-    else:
-        st.session_state.semantic_existed_last_time = False
+
     if st.session_state.previous_labelers != labelers:
         st.session_state.labelers_changed = True
     else:
@@ -155,27 +198,30 @@ def preview_dataset(data_root, folder_name):
         if not ds.dataset_valid:
             st.warning("The provided Dataset folder \"" + data_root + "\" is not considered valid")
 
-            st.markdown("# Please open a dataset folder:")
-            if st.button("Open Dataset", key="second open dataset"):
-                folder_select()
+            #st.markdown("# Please open a dataset folder:")
+            #if st.button("Open Dataset", key="second open dataset"):
+            #    folder_select()
             return
 
         if len(folder_name) >= 1:
             st.sidebar.markdown("# Current dataset:")
             st.sidebar.write(folder_name)
 
-        display_number_frames(ds.length())
+        # SB HERE
+        dataset_len = ds.metadata["totalFrames"]
+        display_number_frames(dataset_len)
 
         available_labelers = ds.get_available_labelers()
-        labelers = create_sidebar_labeler_menu(available_labelers)
+        annotator_dic = ds.get_annotator_dictionary()
+        labelers = create_sidebar_labeler_menu(available_labelers, annotator_dic)
 
         # zoom_image is negative if the application isn't in zoom mode
         index = int(st.session_state.zoom_image)
         if index >= 0:
-            zoom(index, 0, ds, labelers)
+            zoom(index, 0, ds, labelers, annotator_dic)
         else:
             num_rows = 5
-            grid_view(num_rows, ds, labelers)
+            grid_view(num_rows, ds, labelers, annotator_dic)
 
     # if it is a datamaker dataset
     else:
@@ -198,8 +244,9 @@ def preview_dataset(data_root, folder_name):
             ds = instances[instance_key]
             ann_def = ds.ann_def
             available_labelers = [a["name"] for a in ann_def.table.to_dict('records')]
-            labelers = create_sidebar_labeler_menu(available_labelers)
-            zoom(index, offset, ds, labelers)
+            annotator_dic = ds.get_annotator_dictionary()
+            labelers = create_sidebar_labeler_menu(available_labelers, annotator_dic)
+            zoom(index, offset, ds, labelers, annotator_dic)
         else:
             index = st.session_state.start_at
             num_rows = 5
@@ -303,7 +350,7 @@ def create_grid_containers(num_rows: int, num_cols: int, start_at: int, dataset_
     return containers
 
 
-def grid_view(num_rows: int, ds: Dataset, labelers: Dict[str, bool]):
+def grid_view(num_rows: int, ds: Dataset, labelers: Dict[str, bool], annotator_dic):
     """ Creates the grid view streamlit components
 
     :param num_rows: Number of rows
@@ -321,8 +368,12 @@ def grid_view(num_rows: int, ds: Dataset, labelers: Dict[str, bool]):
     containers = create_grid_containers(num_rows, num_cols, start_at, dataset_size)
 
     for i in range(start_at, min(start_at + (num_cols * num_rows), dataset_size)):
-        image = ds.get_image_with_labelers(i, labelers, max_size=get_resolution_from_num_cols(num_cols))
-        containers[i - start_at].image(image, caption=str(i), use_column_width=True)
+        image = ds.get_solo_image_with_labelers(i, labelers, annotator_dic,
+                                                max_size=get_resolution_from_num_cols(num_cols))
+        sequence = (int)(i / ds.solo.steps_per_sequence)
+        step = i % ds.solo.steps_per_sequence
+        containers[i - start_at].image(image, caption="sequence" + str(sequence) + "." + "step" + str(step),
+                                       use_column_width=True)
 
 
 def get_resolution_from_num_cols(num_cols):
@@ -357,7 +408,7 @@ def grid_view_instances(
         ann_def = ds.ann_def
         cap = ds.cap
         data_root = ds.data_root
-        image = ds.get_image_with_labelers(i - datamaker.get_dataset_length_with_instances(instances, instance_key),
+        image = ds.get_solo_image_with_labelers(i - datamaker.get_dataset_length_with_instances(instances, instance_key),
                                            labelers, max_size=(6 - num_cols) * 150)
         containers[i - start_at].image(image, caption=str(i), use_column_width=True)
 
@@ -365,12 +416,13 @@ def grid_view_instances(
 def zoom(index: int,
          offset: int,
          ds: Dataset,
-         labelers: Dict[str, bool]):
+         labelers: Dict[str, bool],
+         annotator_dic):
     """ Creates streamlit components for Zoom in view
 
     :param index: Index of the image
     :type index: int
-    :param offset: Is how much the index needs to be offset, this is only needed to 
+    :param offset: Is how much the index needs to be offset, this is only needed to
                    handle multiple instances (Datamaker datasets)
     :type offset: int
     :param ds: Current Dataset
@@ -404,45 +456,22 @@ def zoom(index: int,
     components.html("""<hr style="height:2px;border:none;color:#AAA;background-color:#AAA;" /> """, height=30)
 
     index = index - offset
-    image = ds.get_image_with_labelers(index, labelers, max_size=2000)
+    image = ds.get_solo_image_with_labelers(index, labelers, annotator_dic, max_size=2000)
 
     st.image(image, use_column_width=True)
     layout = st.beta_columns(2)
     layout[0].title("Captures Metadata")
 
-    captures_dir = None
-    for directory in os.walk(ds.data_root):
-        name = str(directory[0]).replace('\\', '/').split('/')[-1]
-        if name.startswith("Dataset") and \
-                "." not in name[1:] and \
-                os.path.abspath(ds.data_root) != os.path.abspath(directory[0]):
-            captures_dir = os.path.abspath(directory[0])
-            break
-
-    path_to_captures = os.path.join(os.path.abspath(captures_dir), "captures_000.json")
-    json_file = json.load(open(path_to_captures, "r", encoding="utf8"))
-    num_captures_per_file = len(json_file["captures"])
-
-    file_num = index // num_captures_per_file
-    postfix = ('000' + str(file_num))
-    postfix = postfix[len(postfix) - 3:]
-    path_to_captures = os.path.join(os.path.abspath(captures_dir), "captures_" + postfix + ".json")
+    step = index % ds.solo.steps_per_sequence
+    path_to_captures = f"{ds.solo.sequence_path}/step{step}.frame_data.json"
     with layout[0]:
         json_file = json.load(open(path_to_captures, "r", encoding="utf8"))
-        capture = json_file['captures'][index % num_captures_per_file]
+        capture = json_file['captures']
         st.write(capture)
 
     layout[1].title("Metrics Metadata")
-    metrics = []
-    for i in os.listdir(captures_dir):
-        path_to_metrics = os.path.join(captures_dir, i)
-        if os.path.isfile(path_to_metrics) and 'metrics_' in i and 'definitions' not in i:
-            json_file = json.load(open(path_to_metrics, encoding="utf8"))
-            metrics.extend(json_file['metrics'])
+    labeler_annotations = json_file['captures'][0]['annotations']
     with layout[1]:
-        for metric in metrics:
-            if metric['sequence_id'] == capture['sequence_id'] and metric['step'] == capture['step']:
-                for metric_def in ds.get_metrics_records():
-                    if metric_def['id'] == metric['metric_definition']:
-                        st.markdown("## " + metric_def['name'])
-                st.write(metric)
+        for i in labeler_annotations:
+            st.markdown("## " + i['id'])
+            st.write(i)
