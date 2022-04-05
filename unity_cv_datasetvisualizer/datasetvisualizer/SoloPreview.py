@@ -1,3 +1,4 @@
+import glob
 import json
 import os
 import sys
@@ -12,11 +13,12 @@ import helpers.custom_components_setup as cc
 from datasetvisualizer.SoloDataset import Dataset
 import helpers.datamaker_dataset_helper as datamaker
 
-SEMANTIC_SEGMENTATION_TYPE = 'type.unity.com/unity.solo.SemanticSegmentationAnnotationDefinition'
-INSTANCE_SEGMENTATION_TYPE = 'type.unity.com/unity.solo.InstanceSegmentationAnnotationDefinition'
-BOUNDING_BOX_TYPE = 'type.unity.com/unity.solo.BoundingBoxAnnotationDefinition'
-BOUNDING_BOX_3D_TYPE = 'type.unity.com/unity.solo.BoundingBox3DAnnotationDefinition'
-KEYPOINT_TYPE = 'type.unity.com/unity.solo.KeypointAnnotationDefinition'
+SEMANTIC_SEGMENTATION_TYPE = 'type.unity.com/unity.solo.SemanticSegmentationAnnotation'
+INSTANCE_SEGMENTATION_TYPE = 'type.unity.com/unity.solo.InstanceSegmentationAnnotation'
+BOUNDING_BOX_TYPE = 'type.unity.com/unity.solo.BoundingBox2DAnnotation'
+BOUNDING_BOX_3D_TYPE = 'type.unity.com/unity.solo.BoundingBox3DAnnotation'
+KEYPOINT_TYPE = 'type.unity.com/unity.solo.KeypointAnnotation'
+
 
 def datamaker_dataset(path: str) -> Optional[Dict[int, Dataset]]:
     """ Reads the given path as a datamaker dataset
@@ -408,8 +410,9 @@ def grid_view_instances(
         ann_def = ds.ann_def
         cap = ds.cap
         data_root = ds.data_root
-        image = ds.get_solo_image_with_labelers(i - datamaker.get_dataset_length_with_instances(instances, instance_key),
-                                           labelers, max_size=(6 - num_cols) * 150)
+        image = ds.get_solo_image_with_labelers(
+            i - datamaker.get_dataset_length_with_instances(instances, instance_key),
+            labelers, max_size=(6 - num_cols) * 150)
         containers[i - start_at].image(image, caption=str(i), use_column_width=True)
 
 
@@ -463,7 +466,7 @@ def zoom(index: int,
     layout[0].title("Captures Metadata")
 
     step = index % ds.solo.steps_per_sequence
-    path_to_captures = f"{ds.solo.sequence_path}/step{step}.frame_data.json"
+    path_to_captures = f"{ds.get_sequence_path()}/step{step}.frame_data.json"
     with layout[0]:
         json_file = json.load(open(path_to_captures, "r", encoding="utf8"))
         capture = json_file['captures']
