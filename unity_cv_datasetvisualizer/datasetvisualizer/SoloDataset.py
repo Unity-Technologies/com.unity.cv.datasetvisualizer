@@ -138,7 +138,7 @@ class Dataset:
         filename_pattern = f"{self.solo.sequence_path}"
         files = glob.glob(filename_pattern)
         if len(files) != 1:
-            raise Exception(f"Metadata file not found for sequence {sequence}")
+            raise Exception(f"Metadata file not found for sequence {self._solo.sequence_path}")
         return files[0]
 
     def get_solo_image_with_labelers(
