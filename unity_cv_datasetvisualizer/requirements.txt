@@ -12,7 +12,7 @@ coverage>=5.5
 opencv-python>=4.5
 datasetinsights
 PySide2>=5.15.2
-unity-vision
+unity-vision==0.1.7
 setuptools
 numpy
 pyquaternion
