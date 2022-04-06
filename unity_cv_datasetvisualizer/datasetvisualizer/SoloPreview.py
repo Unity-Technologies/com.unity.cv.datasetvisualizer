@@ -299,7 +299,7 @@ def create_grid_view_controls(num_rows: int, dataset_size: int) -> Tuple[int, in
     :return: Returns the number of columns and the index at which the grid must start
     :rtype: Tuple[int, int]
     """
-    header = st.beta_columns([2 / 3, 1 / 3])
+    header = st.columns([2 / 3, 1 / 3])
 
     num_cols = header[1].slider(label="Frames per row: ", min_value=1, max_value=5, step=1,
                                 value=int(st.session_state.num_cols))
@@ -335,7 +335,7 @@ def create_grid_containers(num_rows: int, num_cols: int, start_at: int, dataset_
     :return: list of the containers in order from left to right, up to down
     :rtype: List[any]
     """
-    cols = st.beta_columns(num_cols)
+    cols = st.columns(num_cols)
     containers = [None] * (num_cols * num_rows)
     for i in range(start_at, min(start_at + (num_cols * num_rows), dataset_size)):
         containers[i - start_at] = cols[(i - (start_at % num_cols)) % num_cols].beta_container()
@@ -444,7 +444,7 @@ def zoom(index: int,
         st.session_state.just_opened_grid = True
         st.experimental_rerun()
 
-    header = st.beta_columns([2 / 3, 1 / 3])
+    header = st.columns([2 / 3, 1 / 3])
     with header[0]:
         new_index = cc.item_selector_zoom(index, dataset_size + offset)
         if not new_index == index and not st.session_state.just_opened_zoom and not st.session_state.labelers_changed:
@@ -462,7 +462,7 @@ def zoom(index: int,
     image = ds.get_solo_image_with_labelers(index, labelers, annotator_dic, max_size=2000)
 
     st.image(image, use_column_width=True)
-    layout = st.beta_columns(2)
+    layout = st.columns(2)
     layout[0].title("Captures Metadata")
 
     step = index % ds.solo.steps_per_sequence
