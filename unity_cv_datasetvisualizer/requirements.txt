@@ -1,4 +1,4 @@
-Pillow>=8.1.0
+Pillow
 streamlit>=0.84.1
 google-cloud-storage>=1.19.0
 flake8==3.8.3
@@ -13,4 +13,4 @@ opencv-python>=4.5
 pyquaternion>=0.9.9
 datasetinsights==1.1.1
 PySide2==5.15.2
-unity-vision==0.1.7
+unity-vision
