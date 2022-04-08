@@ -6,6 +6,7 @@ from os.path import isfile, join
 from typing import Dict
 from PIL import Image
 from google.protobuf.json_format import MessageToDict
+import unity_vision
 from unity_vision.consumers.solo.parser import Solo
 from unity_vision.protos.solo_pb2 import (
     BoundingBox2DAnnotation,
