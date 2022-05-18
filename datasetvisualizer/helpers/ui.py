@@ -3,23 +3,23 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Dict, Optional, Union
-
+import io
 import streamlit as st
 from PIL import Image
-
+import requests
 
 class Components:
     @staticmethod
     def img(
-        path: Union[str, Path],
+        pil_image: Image,
         caption: Optional[str] = None,
         use_column_width: bool = True,
     ):
         """
         Streamlit doesn't seem to handle Windows paths at all!
         """
-        final_path = str(path.resolve()) if type(path) is Path else str(path)
-        pil_image = Image.open(final_path)
+   #     final_path = str(path.resolve()) if type(path) is Path else str(path)
+   #     pil_image = Image.open(final_path)
         st.image(pil_image, caption=caption, use_column_width=use_column_width)
 
     @staticmethod
@@ -38,11 +38,12 @@ class Components:
             unsafe_allow_html=True,
         )
 
-    @staticmethod
     def draw_homepage():
+        showcase_url = "https://raw.githubusercontent.com/Unity-Technologies/com.unity.cv.datasetvisualizer/main/datasetvisualizer/docs/showcase-5-labelers.gif"
+        showcase_image = Components.get_image_from_url(showcase_url)
         st.markdown("# Unity CV Dataset Visualizer")
         Components.img(
-            AppState.get_docs_path("showcase-5-labelers.gif"),
+            showcase_image,
             caption="Visualization of various labelers",
             use_column_width=False,
         )
@@ -62,7 +63,10 @@ class Components:
             "2. Choose the root folder of your dataset created using the Perception Package.\n"
             "3. Dataset Visualizer will read and display the dataset in a grid view."
         )
-
+    @staticmethod
+    def get_image_from_url(url: str):
+        response = requests.get(url)
+        return Image.open(io.BytesIO(response.content))
 
 class AppState:
     @staticmethod

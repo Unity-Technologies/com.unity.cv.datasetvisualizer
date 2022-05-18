@@ -1,8 +1,8 @@
 import os
 import sys
-
 import streamlit as st
 from PIL import Image
+import requests
 
 from datasetvisualizer.core.formats.common import (
     DATASET_TYPE_LEGACY,
@@ -37,7 +37,9 @@ def preview_app(args):
     dataset_type = get_dataset_format(selected_dataset_dir)
 
     with st.sidebar:
-        Components.img(AppState.get_docs_path("unity_logo.png"))
+        unity_logo_url = "https://raw.githubusercontent.com/Unity-Technologies/com.unity.cv.datasetvisualizer/main/datasetvisualizer/docs/unity_logo.png"
+        unity_logo_image = Components.get_image_from_url(unity_logo_url)
+        Components.img(unity_logo_image)
 
         # Display select dataset menu
         left_dt, right_dt = st.columns(2)
@@ -87,7 +89,8 @@ def preview_app(args):
 
 
 if __name__ == "__main__":
-    favicon = Image.open(AppState.get_docs_path("favicon.ico", as_str=True))
+    favicon_url = "https://raw.githubusercontent.com/Unity-Technologies/com.unity.cv.datasetvisualizer/main/datasetvisualizer/docs/favicon.ico"
+    favicon = Components.get_image_from_url(favicon_url)
     st.set_page_config(
         page_title="Unity Dataset Visualizer",
         layout="wide",
