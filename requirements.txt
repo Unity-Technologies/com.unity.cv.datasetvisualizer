@@ -1,5 +1,5 @@
 --extra-index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple
-unity-vision>=0.1.8
+unity_vision==0.1.8
 Pillow>=8.1.0
 streamlit>=0.84.1
 google-cloud-storage>=1.19.0
@@ -14,6 +14,6 @@ coverage>=5.5
 opencv-python>=4.5
 pyquaternion>=0.9.9
 datasetinsights>=1.1.2
-PySide2>=5.15.2
+PySide6
 dash
 markupsafe==2.0.1
