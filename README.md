@@ -16,6 +16,8 @@ Unity Computer Vision team's python-based Dataset Visualizer provides an easy wa
 **For Unity Internal Users Only**
 
 This application only supports Python 3.7, and the installation process is the following (needs to be under Unity VPN):
+
+(For Users with Mac M1 Chip, can follow this [article](https://diewland.medium.com/how-to-install-python-3-7-on-macbook-m1-87c5b0fcb3b5) to install Python 3.7)
 1. create a virtual environment with python 3.7
 ```bash
 conda create -n dv_env python==3.7
