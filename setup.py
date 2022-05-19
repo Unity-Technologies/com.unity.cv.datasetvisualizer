@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="unity-cv-datasetvisualizer",
-    version="0.2.0",
+    version="0.2.3",
     author="Unity Technologies",
     description="This Python based tool allows you to visualize datasets created using Unity Computer Vision tools.",
     long_description=long_description,
