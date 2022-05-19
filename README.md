@@ -12,6 +12,24 @@ Unity Computer Vision team's python-based Dataset Visualizer provides an easy wa
   <img width="100%" src="datasetvisualizer/docs/showcase-5-labelers.gif" />
 </div>
 
+---
+**For Unity Internal Users Only**
+
+This application only supports Python 3.7, and the installation process is the following (needs to be under Unity VPN):
+1. create a virtual environment with python 3.7
+```bash
+conda create -n dv_env python==3.7
+conda activate dv_env
+```
+2. Install the application by using the following command
+```bash
+pip install unity-cv-datasetvisualizer --extra-index-url=https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/unity-pypi-local/simple/
+```
+3. To open the visualizer
+```bash
+datasetvisualizer -s
+```
+---
 ## Requirements
 
 * Windows 10 or OSX
@@ -33,7 +51,7 @@ We recommend using a virtual environment to install and run the app. One way to 
 * Create a virtual environment named `dv_env` using Conda, and activate it (use `3.7` or `3.8` for `<python_version>`):
 
 ```bash
-conda create -n dv_env python=<python_version>
+conda create -n dv_env python==<python_version>
 conda activate dv_env
 ```
 **Step 2:** Install application
