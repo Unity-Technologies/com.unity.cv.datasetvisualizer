@@ -1,8 +1,8 @@
 ﻿import platform
 import sys
 
-from PySide2 import QtCore
-from PySide2.QtWidgets import QApplication, QFileDialog
+from PySide6 import QtCore
+from PySide6.QtWidgets import QApplication, QFileDialog
 
 # General setup
 if not QApplication.instance():
@@ -21,6 +21,6 @@ if platform.system() == "Windows":
     dialog.setWindowFlags(dialog.windowFlags() | QtCore.Qt.WindowStaysOnTopHint)
     dialog.show()
 
-if dialog.exec_():
+if dialog.exec():
     fileName = dialog.selectedFiles()
     print(fileName[0])
