@@ -14,15 +14,25 @@ Unity Computer Vision team's python-based Dataset Visualizer provides an easy wa
 
 ## Requirements
 
-* Windows 10 or OSX
+### Public version
+
+* Windows 10 or macOS **(Intel based only)**
 * Chrome, Firefox, or Safari 14 and newer (Older versions of Safari are not supported)
 * Python 3.7 or 3.8. **Note that this application is not compatible with Python 3.9.**
+
+### Internal version
+
+* Windows 10 or macOS **(Not support Apple M1)**
+* Chrome, Firefox, or Safari 14 and newer (Older versions of Safari are not supported)
+* Python 3.7 or 3.8. **Note that this application is not compatible with Python 3.9.**
+
 
 ## Installation
 
 We recommend using a virtual environment to install and run the app. One way to achieve this is using Conda.
 
-**Step 1:** Create a virtual environment (skip to step 2 if you are setting up a virtual environment using other methods)
+### Step 1 
+Create a virtual environment (skip to step 2 if you are setting up a virtual environment using other methods)
 
 * Install Conda if you do not already have it installed on your computer. We recommend [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
@@ -30,19 +40,29 @@ We recommend using a virtual environment to install and run the app. One way to 
   * On Mac OS, open a new terminal window.
   * On Windows, you will need to open either Anaconda Prompt or Anaconda Powershell Prompt. These can be found in the Start menu.
 
-* Create a virtual environment named `dv_env` using Conda, and activate it (use `3.7` or `3.8` for `<python_version>`):
+* Create a virtual environment named `dv_env` using Conda, and activate it:
 
 ```bash
-conda create -n dv_env python=<python_version>
+conda create -n dv_env python==<python_version>
 conda activate dv_env
 ```
-**Step 2:** Install application
+### Step 2
 
-Use the following command to install the visualizer.
+Use the following commands to install the visualizer.
+
+***Public version***
 
 ```bash
 pip install unity-cv-datasetvisualizer
 ```
+***Internal version: (requires a connection to the Unity VPN)***
+
+```bash
+pip install unity-cv-datasetvisualizer --extra-index-url=https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/unity-pypi-local/simple/
+```
+
+**Notes**
+> :information_source: For Apple M1 based computers, you can follow this [article](https://diewland.medium.com/how-to-install-python-3-7-on-macbook-m1-87c5b0fcb3b5) to install Python 3.7. Note that the M1 architecture is only supported in the internal version of the app.
 
 > :information_source: On Windows, if you get an error about the system not being able to create a process when running the install command, make sure you have the latest version of Conda installed. Then create a new environment with a new name, and try the install command again. If the error persists, try leaving the Conda virtual environment using `conda deactivate` and running the command outside of any virtual environment.
 
