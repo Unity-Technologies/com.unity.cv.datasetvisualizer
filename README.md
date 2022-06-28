@@ -22,9 +22,9 @@ Unity Computer Vision team's python-based Dataset Visualizer provides an easy wa
 
 ### Internal version
 
-* Windows 10 or macOS **(Both Intel and Apple M1)**
+* Windows 10 or macOS **(Not support Apple M1)**
 * Chrome, Firefox, or Safari 14 and newer (Older versions of Safari are not supported)
-* Python 3.7 **only**
+* Python 3.7 or 3.8. **Note that this application is not compatible with Python 3.9.**
 
 
 ## Installation
